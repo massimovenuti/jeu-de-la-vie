@@ -64,7 +64,7 @@ void affiche_grille (grille g){
  * \param g Grille : grille à effacer.
  */
 void efface_grille (grille g){
-	printf("\n\e[%dA",g.nbl*2 + 5); 
+    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 5); 
 }
 
 /**
