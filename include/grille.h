@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
-#define TAILLE_MAX 250
+
 
 // structure grille : nombre de lignes, nombre de colonnes, tableau de tableau de cellules
 typedef struct {int nbl; int nbc; int** cellules;} grille;

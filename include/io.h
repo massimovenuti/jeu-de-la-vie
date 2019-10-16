@@ -2,8 +2,12 @@
 #define __IO_H
 
 #include <stdio.h>
+#include <string.h>
 #include "grille.h"
 #include "jeu.h"
+#define TAILLE_MAX 250
+#define PATH "grilles/"
+#define EXTENSION ".txt"
 
 // affichage d'un trait horizontal
 void affiche_trait (int c);
