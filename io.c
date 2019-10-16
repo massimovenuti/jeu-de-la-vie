@@ -32,15 +32,33 @@ void efface_grille (grille g){
 }
 
 void debut_jeu(grille *g, grille *gc){
-	char c = getchar(); 
-	while (c != 'q') // touche 'q' pour quitter
-	{ 
-		switch (c) {
+	char c = getchar();
+
+while (c != 'q') // touche 'q' pour quitter
+{ 
+	switch (c) {
 			case '\n' : 
 			{ // touche "entree" pour évoluer
 				evolue(g,gc);
 				efface_grille(*g);
 				affiche_grille(*g);
+				break;
+			}
+			case 'n' : 
+			{
+				char nomFichier[TAILLE_MAX];
+
+				libere_grille(g);
+				libere_grille(gc);
+
+				printf("Veuillez saisir le nom d'une nouvelle grille : ");
+				scanf("%s", nomFichier);
+				while(getchar() != '\n');
+
+				init_grille_from_file(nomFichier,g);
+				alloue_grille (g->nbl, g->nbc, gc);
+				affiche_grille(*g);
+
 				break;
 			}
 			default : 
@@ -51,5 +69,5 @@ void debut_jeu(grille *g, grille *gc){
 		}
 		c = getchar(); 
 	}
-	return;	
+	return;
 }
