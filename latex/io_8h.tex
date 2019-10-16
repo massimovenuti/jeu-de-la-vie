@@ -1,0 +1,143 @@
+\hypertarget{io_8h}{}\section{Référence du fichier include/io.h}
+\label{io_8h}\index{include/io.\+h@{include/io.\+h}}
+
+
+Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{io_8c}{io.\+c}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}grille.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de io.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{io_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{io_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{io_8h_ae6ad0540d5109a0200f0dde5dc5b4bf6}\label{io_8h_ae6ad0540d5109a0200f0dde5dc5b4bf6}} 
+\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+M\+AX}~200
+\item 
+\mbox{\Hypertarget{io_8h_ab0139008fdda107456f13f837872b410}\label{io_8h_ab0139008fdda107456f13f837872b410}} 
+\#define {\bfseries P\+A\+TH}~\char`\"{}grilles/\char`\"{}
+\item 
+\mbox{\Hypertarget{io_8h_a7489acf4773e622a802155319f0533e8}\label{io_8h_a7489acf4773e622a802155319f0533e8}} 
+\#define {\bfseries E\+X\+T\+E\+N\+S\+I\+ON}~\char`\"{}.txt\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{io_8h_a634cf584c380ce221d5d4199f3e813bd}{affiche\+\_\+trait} (int c)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}un trait horizontal. \end{DoxyCompactList}\item 
+void \hyperlink{io_8h_a3f3ff78e56fcf21a932ff73b70635554}{affiche\+\_\+ligne} (int c, int $\ast$ligne)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille. \end{DoxyCompactList}\item 
+void \hyperlink{io_8h_a90cb8ec05374b46d9995705ed4954f34}{affiche\+\_\+grille} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille. \end{DoxyCompactList}\item 
+void \hyperlink{io_8h_ab36a6f8957cd3e682119007836ce6ad5}{efface\+\_\+grille} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}effacement d\textquotesingle{}une grille. \end{DoxyCompactList}\item 
+void \hyperlink{io_8h_a88493b3c55828670e47150a95ed7db5b}{debut\+\_\+jeu} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
+\begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu. Saisir la touche q permet de quitter le jeu, entrée permet de faire évoluer le jeu d\textquotesingle{}un temps, n permet d\textquotesingle{}entrée une nouvelle grille (ex \+: grille1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{io_8c}{io.\+c}. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Prototypes des fonctions. 
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{io_8h_a90cb8ec05374b46d9995705ed4954f34}\label{io_8h_a90cb8ec05374b46d9995705ed4954f34}} 
+\index{io.\+h@{io.\+h}!affiche\+\_\+grille@{affiche\+\_\+grille}}
+\index{affiche\+\_\+grille@{affiche\+\_\+grille}!io.\+h@{io.\+h}}
+\subsubsection{\texorpdfstring{affiche\+\_\+grille()}{affiche\_grille()}}
+{\footnotesize\ttfamily void affiche\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8h_a3f3ff78e56fcf21a932ff73b70635554}\label{io_8h_a3f3ff78e56fcf21a932ff73b70635554}} 
+\index{io.\+h@{io.\+h}!affiche\+\_\+ligne@{affiche\+\_\+ligne}}
+\index{affiche\+\_\+ligne@{affiche\+\_\+ligne}!io.\+h@{io.\+h}}
+\subsubsection{\texorpdfstring{affiche\+\_\+ligne()}{affiche\_ligne()}}
+{\footnotesize\ttfamily void affiche\+\_\+ligne (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{int $\ast$}]{ligne }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & Entier \+: nombre de colonnes de la grille. \\
+\hline
+{\em ligne} & Tableau d\textquotesingle{}entiers \+: ligne de la grille. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8h_a634cf584c380ce221d5d4199f3e813bd}\label{io_8h_a634cf584c380ce221d5d4199f3e813bd}} 
+\index{io.\+h@{io.\+h}!affiche\+\_\+trait@{affiche\+\_\+trait}}
+\index{affiche\+\_\+trait@{affiche\+\_\+trait}!io.\+h@{io.\+h}}
+\subsubsection{\texorpdfstring{affiche\+\_\+trait()}{affiche\_trait()}}
+{\footnotesize\ttfamily void affiche\+\_\+trait (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}un trait horizontal. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & Entier \+: nombre de colonnes de la grille. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8h_a88493b3c55828670e47150a95ed7db5b}\label{io_8h_a88493b3c55828670e47150a95ed7db5b}} 
+\index{io.\+h@{io.\+h}!debut\+\_\+jeu@{debut\+\_\+jeu}}
+\index{debut\+\_\+jeu@{debut\+\_\+jeu}!io.\+h@{io.\+h}}
+\subsubsection{\texorpdfstring{debut\+\_\+jeu()}{debut\_jeu()}}
+{\footnotesize\ttfamily void debut\+\_\+jeu (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc }\end{DoxyParamCaption})}
+
+
+
+Fonction pour débuter le jeu. Saisir la touche q permet de quitter le jeu, entrée permet de faire évoluer le jeu d\textquotesingle{}un temps, n permet d\textquotesingle{}entrée une nouvelle grille (ex \+: grille1). 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8h_ab36a6f8957cd3e682119007836ce6ad5}\label{io_8h_ab36a6f8957cd3e682119007836ce6ad5}} 
+\index{io.\+h@{io.\+h}!efface\+\_\+grille@{efface\+\_\+grille}}
+\index{efface\+\_\+grille@{efface\+\_\+grille}!io.\+h@{io.\+h}}
+\subsubsection{\texorpdfstring{efface\+\_\+grille()}{efface\_grille()}}
+{\footnotesize\ttfamily void efface\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}effacement d\textquotesingle{}une grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à effacer. \\
+\hline
+\end{DoxyParams}

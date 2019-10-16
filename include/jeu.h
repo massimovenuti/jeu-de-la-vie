@@ -1,10 +1,26 @@
+/**
+ * \file jeu.h
+ * \brief Fichier d'en-tête du fichier source jeu.c
+ * \author Massimo Venuti
+ * \version 1.0
+ *
+ * Prototypes des fonctions et fonction modulo.
+ *
+ */
+
 #ifndef __JEU_H
 #define __JEU_H
 
 #include "grille.h"
 
-// modulo modifié pour traiter correctement les bords i=0 et j=0
-// dans le calcul des voisins avec bords cycliques
+
+/**
+ * \fn static inline int modulo(int i, int m)
+ * \brief Fonction modulo modifiée pour traiter correctement les bords d'une grille dans le calcul des voisins avec bords cycliques.
+ *
+ * \param l Entier : nombre de lignes.
+ * \param c Entier : nombre de colonnes.
+ */
 static inline int modulo(int i, int m) {return (i+m)%m;}
 
 // compte le nombre de voisins vivants de la cellule (i,j)

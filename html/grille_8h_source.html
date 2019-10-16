@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la Vie:  Fichier source de include/grille.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la Vie
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('grille_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">grille.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="grille_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __GRILLE_H</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __GRILLE_H</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structgrille.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{<span class="keywordtype">int</span> nbl; <span class="keywordtype">int</span> nbc; <span class="keywordtype">int</span>** cellules;} <a class="code" href="structgrille.html">grille</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// alloue une grille de taille l*c, et initialise toutes les cellules à mortes</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="grille_8h.html#ae621f51c60aa4fafaa0c9f6c9b5a4036">alloue_grille</a> (<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> c, <a class="code" href="structgrille.html">grille</a>* g);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// libère une grille</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="grille_8h.html#a7074b2b15576e9d2b3cd15c3a1dc7012">libere_grille</a> (<a class="code" href="structgrille.html">grille</a>* g);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// alloue et initalise la grille g à partir d&#39;un fichier</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="grille_8h.html#adf5501cc0bbad28f5ffc561d92197e4e">init_grille_from_file</a> (<span class="keywordtype">char</span> * filename, <a class="code" href="structgrille.html">grille</a>* g);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="grille_8h.html#a889ff6b0976dfb79007387ad30d9c790">   43</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="grille_8h.html#a889ff6b0976dfb79007387ad30d9c790">set_vivante</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <a class="code" href="structgrille.html">grille</a> g){g.cellules[i][j] = 1;}</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="grille_8h.html#ab5ab346bdf3a9d7e3a0bfeab40416d6e">   53</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="grille_8h.html#ab5ab346bdf3a9d7e3a0bfeab40416d6e">set_morte</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <a class="code" href="structgrille.html">grille</a> g){g.cellules[i][j] = 0;}</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// teste si la cellule (i,j) de la grille g est vivante</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="grille_8h.html#a4a27d70711027eca191df5592f922001">   65</a></span>&#160;<span class="comment"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="grille_8h.html#a4a27d70711027eca191df5592f922001">est_vivante</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <a class="code" href="structgrille.html">grille</a> g){<span class="keywordflow">return</span> g.cellules[i][j] == 1;}</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// recopie gs dans gd (sans allocation)</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="grille_8h.html#a63b3ae16c86b568f6aa8f9ce84128b1e">copie_grille</a> (<a class="code" href="structgrille.html">grille</a> gs, <a class="code" href="structgrille.html">grille</a> gd);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="grille_8h_html_ab5ab346bdf3a9d7e3a0bfeab40416d6e"><div class="ttname"><a href="grille_8h.html#ab5ab346bdf3a9d7e3a0bfeab40416d6e">set_morte</a></div><div class="ttdeci">static void set_morte(int i, int j, grille g)</div><div class="ttdoc">Fonction rendant morte la cellule [i,j] d&amp;#39;une grille. </div><div class="ttdef"><b>Definition:</b> grille.h:53</div></div>
+<div class="ttc" id="grille_8h_html_a4a27d70711027eca191df5592f922001"><div class="ttname"><a href="grille_8h.html#a4a27d70711027eca191df5592f922001">est_vivante</a></div><div class="ttdeci">static int est_vivante(int i, int j, grille g)</div><div class="ttdoc">Fonction testant si la cellule [i,j] d&amp;#39;une grille est vivante. </div><div class="ttdef"><b>Definition:</b> grille.h:65</div></div>
+<div class="ttc" id="structgrille_html"><div class="ttname"><a href="structgrille.html">grille</a></div><div class="ttdef"><b>Definition:</b> grille.h:24</div></div>
+<div class="ttc" id="grille_8h_html_a63b3ae16c86b568f6aa8f9ce84128b1e"><div class="ttname"><a href="grille_8h.html#a63b3ae16c86b568f6aa8f9ce84128b1e">copie_grille</a></div><div class="ttdeci">void copie_grille(grille gs, grille gd)</div><div class="ttdoc">Fonction de copie d&amp;#39;une grille (sans allocation). </div><div class="ttdef"><b>Definition:</b> grille.c:91</div></div>
+<div class="ttc" id="grille_8h_html_a889ff6b0976dfb79007387ad30d9c790"><div class="ttname"><a href="grille_8h.html#a889ff6b0976dfb79007387ad30d9c790">set_vivante</a></div><div class="ttdeci">static void set_vivante(int i, int j, grille g)</div><div class="ttdoc">Fonction rendant vivante la cellule [i,j] d&amp;#39;une grille. </div><div class="ttdef"><b>Definition:</b> grille.h:43</div></div>
+<div class="ttc" id="grille_8h_html_ae621f51c60aa4fafaa0c9f6c9b5a4036"><div class="ttname"><a href="grille_8h.html#ae621f51c60aa4fafaa0c9f6c9b5a4036">alloue_grille</a></div><div class="ttdeci">void alloue_grille(int l, int c, grille *g)</div><div class="ttdoc">Fonction d&amp;#39;allocation d&amp;#39;une grille de taille l*c, initialise toutes les cellules à mortes...</div><div class="ttdef"><b>Definition:</b> grille.c:21</div></div>
+<div class="ttc" id="grille_8h_html_a7074b2b15576e9d2b3cd15c3a1dc7012"><div class="ttname"><a href="grille_8h.html#a7074b2b15576e9d2b3cd15c3a1dc7012">libere_grille</a></div><div class="ttdeci">void libere_grille(grille *g)</div><div class="ttdoc">Fonction de libération d&amp;#39;une grille. </div><div class="ttdef"><b>Definition:</b> grille.c:47</div></div>
+<div class="ttc" id="grille_8h_html_adf5501cc0bbad28f5ffc561d92197e4e"><div class="ttname"><a href="grille_8h.html#adf5501cc0bbad28f5ffc561d92197e4e">init_grille_from_file</a></div><div class="ttdeci">void init_grille_from_file(char *filename, grille *g)</div><div class="ttdoc">Fonction d&amp;#39;allocation et d&amp;#39;initalisation d&amp;#39;une grille à partir d&amp;#39;un fichier. </div><div class="ttdef"><b>Definition:</b> grille.c:60</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="grille_8h.html">grille.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

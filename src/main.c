@@ -1,13 +1,30 @@
+/**
+ * \file main.c
+ * \brief Jeu de la vie
+ * \author Massimo Venuti
+ * \version 1.0
+ *
+ * Programme de base du jeu de la vie mettant en jeu une série de grilles initiales prédéfinies pouvant être séléctionnées par le joueur.
+ *
+ */
 #include <stdio.h>
-
 #include "grille.h"
 #include "io.h"
 #include "jeu.h"
 
+
+/**
+ * \fn int main (int argc, char ** argv)
+ * \brief Entrée du programme
+ *
+ * \param argc Chaine de caractères : nom du programme.
+ * \param argv Chaine de caractères : nom de la grille à charger.
+ * \return 0 si aucune erreur.
+ */
 int main (int argc, char ** argv) {
 
 	char path[TAILLE_MAX]=PATH;
-	char extension[]= EXTENSION;
+	char extension[TAILLE_MAX]= EXTENSION;
 
 	if (argc != 2 )
 	{

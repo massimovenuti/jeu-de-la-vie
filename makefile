@@ -27,8 +27,11 @@ grille.o : grille.c grille.h
 $(OPATH)/ :
 	mkdir $@
 
+doc :
+	doxygen
+
 clean :
 	rm $(OPATH)/* bin/*
 
 dist :
-	tar -c --xz makefile src/ -f archive.tar.xz  
+	tar -c --xz Doxyfile makefile src/ -f archive.tar.xz  

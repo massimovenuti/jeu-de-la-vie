@@ -1,0 +1,75 @@
+\hypertarget{jeu_8c}{}\section{Référence du fichier src/jeu.c}
+\label{jeu_8c}\index{src/jeu.\+c@{src/jeu.\+c}}
+
+
+Règles du jeu de la vie.  
+
+
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de jeu.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{jeu_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}{compte\+\_\+voisins\+\_\+vivants} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. \end{DoxyCompactList}\item 
+void \hyperlink{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}{evolue} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
+\begin{DoxyCompactList}\small\item\em Fonction faisant évoluer la grille d\textquotesingle{}un pas de temps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Règles du jeu de la vie. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}\label{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}} 
+\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}}
+\index{compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants()}{compte\_voisins\_vivants()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & Entier \+: i-\/ème ligne de la grille. \\
+\hline
+{\em j} & Entier \+: j-\/ème colonne de la grille. \\
+\hline
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: nombre de voisins vivants d\textquotesingle{}une cellule 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}\label{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}} 
+\index{jeu.\+c@{jeu.\+c}!evolue@{evolue}}
+\index{evolue@{evolue}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{evolue()}{evolue()}}
+{\footnotesize\ttfamily void evolue (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc }\end{DoxyParamCaption})}
+
+
+
+Fonction faisant évoluer la grille d\textquotesingle{}un pas de temps. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+\end{DoxyParams}

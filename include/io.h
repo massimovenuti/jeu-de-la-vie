@@ -1,3 +1,13 @@
+/**
+ * \file io.h
+ * \brief Fichier d'en-tête du fichier source io.c
+ * \author Massimo Venuti
+ * \version 1.0
+ *
+ * Prototypes des fonctions.
+ *
+ */
+
 #ifndef __IO_H
 #define __IO_H
 
@@ -5,7 +15,7 @@
 #include <string.h>
 #include "grille.h"
 #include "jeu.h"
-#define TAILLE_MAX 250
+#define TAILLE_MAX 200
 #define PATH "grilles/"
 #define EXTENSION ".txt"
 

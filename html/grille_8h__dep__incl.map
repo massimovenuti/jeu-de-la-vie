@@ -1,0 +1,8 @@
+<map id="include/grille.h" name="include/grille.h">
+<area shape="rect" id="node2" href="$grille_8c.html" title="Gestion des grilles du jeu de la vie. " alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="Jeu de la vie. " alt="" coords="135,229,217,256"/>
+<area shape="rect" id="node4" href="$io_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io.c. " alt="" coords="309,155,397,181"/>
+<area shape="rect" id="node6" href="$jeu_8h.html" title="Fichier d&#39;en&#45;tête du fichier source jeu.c. " alt="" coords="182,80,277,107"/>
+<area shape="rect" id="node5" href="$io_8c.html" title="Gestion des entrées/sorties du jeu de la vie. " alt="" coords="321,229,386,256"/>
+<area shape="rect" id="node7" href="$jeu_8c.html" title="Règles du jeu de la vie. " alt="" coords="213,155,285,181"/>
+</map>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la Vie: Référence du fichier src/jeu.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la Vie
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('jeu_8c.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier jeu.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Règles du jeu de la vie.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="jeu_8h_source.html">jeu.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de jeu.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="jeu_8c__incl.png" border="0" usemap="#src_2jeu_8c" alt=""/></div>
+<map name="src_2jeu_8c" id="src_2jeu_8c">
+<area shape="rect" id="node2" href="jeu_8h.html" title="Fichier d&#39;en&#45;tête du fichier source jeu.c. " alt="" coords="99,80,149,107"/>
+<area shape="rect" id="node3" href="grille_8h.html" title="Fichier d&#39;en&#45;tête du fichier source grille.c. " alt="" coords="94,155,154,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8c.html#adf9adf6ee75bcfbe164ac465ca5e4f82">compte_voisins_vivants</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction comptant le nombre de voisins vivants d'une cellule [i,j], les bords sont cycliques.  <a href="#adf9adf6ee75bcfbe164ac465ca5e4f82">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8f751a97ad1847db23c5ba17be7802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8c.html#ada8f751a97ad1847db23c5ba17be7802">evolue</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
+<tr class="memdesc:ada8f751a97ad1847db23c5ba17be7802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant évoluer la grille d'un pas de temps.  <a href="#ada8f751a97ad1847db23c5ba17be7802">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ada8f751a97ad1847db23c5ba17be7802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Règles du jeu de la vie. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Massimo Venuti </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="adf9adf6ee75bcfbe164ac465ca5e4f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9adf6ee75bcfbe164ac465ca5e4f82">&#9670;&nbsp;</a></span>compte_voisins_vivants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compte_voisins_vivants </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction comptant le nombre de voisins vivants d'une cellule [i,j], les bords sont cycliques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Entier : i-ème ligne de la grille. </td></tr>
+    <tr><td class="paramname">j</td><td>Entier : j-ème colonne de la grille. </td></tr>
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : nombre de voisins vivants d'une cellule </dd></dl>
+
+</div>
+</div>
+<a id="ada8f751a97ad1847db23c5ba17be7802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8f751a97ad1847db23c5ba17be7802">&#9670;&nbsp;</a></span>evolue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evolue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant évoluer la grille d'un pas de temps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>Adresse de la grille servant de copie temporaire pour le programme. </td></tr>
+    <tr><td class="paramname">g</td><td>Adresse de la grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="jeu_8c.html">jeu.c</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>
