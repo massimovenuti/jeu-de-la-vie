@@ -48,7 +48,7 @@ void debut_jeu(grille *g, grille *gc){
 			case 'n' : 
 			{
 				char nomFichier[TAILLE_MAX];
-				char path[] = PATH;
+				char path[TAILLE_MAX] = PATH;
 
 				libere_grille(g);
 				libere_grille(gc);

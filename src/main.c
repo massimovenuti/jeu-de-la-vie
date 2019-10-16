@@ -6,7 +6,7 @@
 
 int main (int argc, char ** argv) {
 
-	char path[]=PATH;
+	char path[TAILLE_MAX]=PATH;
 	char extension[]= EXTENSION;
 
 	if (argc != 2 )
