@@ -57,6 +57,13 @@ void affiche_grille (grille g){
 	return;
 }
 
+void affiche_temps(int temps, grille g) {
+	efface_grille(g);
+	printf("%d", temps);
+	affiche_grille(g);
+	return;
+}
+
 /**
  * \fn void efface_grille (grille g)
  * \brief Fonction d'effacement d'une grille.
@@ -77,19 +84,21 @@ void efface_grille (grille g){
 void debut_jeu(grille *g, grille *gc){
 	char c = getchar();
 	char extension[] = EXTENSION;
+	int temps = 0;
 
 	while (c != 'q') // touche 'q' pour quitter
 	{ 
 		switch (c) {
 			case '\n' : 
 			{ // touche "entree" pour évoluer
+				temps++;
 				evolue(g,gc);
-				efface_grille(*g);
-				affiche_grille(*g);
+				affiche_temps(temps, *g);
 				break;
 			}
 			case 'n' : 
 			{
+				temps = 0;
 				char nomFichier[TAILLE_MAX];
 				char path[TAILLE_MAX] = PATH;
 

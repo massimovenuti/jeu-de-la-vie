@@ -34,4 +34,6 @@ void efface_grille (grille g);
 // debute le jeu
 void debut_jeu(grille *g, grille *gc);
 
+void affiche_temps(int temps, grille g);
+
 #endif
