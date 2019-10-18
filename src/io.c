@@ -138,9 +138,9 @@ void debut_jeu(grille *g, grille *gc){
 			case 'c' :
 			{ // touche "c" pour activer/désactiver le voisinage cyclique
 				if (compte_voisins_vivants == compte_voisins_vivants_cyclique)
-					compte_voisins_vivants = compte_voisins_vivants_non_cyclique;
+					compte_voisins_vivants = &compte_voisins_vivants_non_cyclique;
 				else 
-					compte_voisins_vivants = compte_voisins_vivants_cyclique;
+					compte_voisins_vivants = &compte_voisins_vivants_cyclique;
 				break;
 			}			
 				

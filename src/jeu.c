@@ -9,7 +9,7 @@
  */
 #include "jeu.h"
 
-calcul_voisins compte_voisins_vivants = compte_voisins_vivants_cyclique;
+int (*compte_voisins_vivants)(int, int, grille) = &compte_voisins_vivants_cyclique;
 int vieillissement = VIEILLISSEMENT_INIT;
 
 /**
@@ -77,7 +77,7 @@ void evolue (grille *g, grille *gc){
 	{
 		for (j=0; j<c; ++j)
 		{
-			v = compte_voisins_vivants (i, j, *gc);
+			v = (*compte_voisins_vivants) (i, j, *gc);
 			if (est_vivante(i,j,*g)) 
 			{ // evolution d'une cellule vivante
 				if (v!=2 && v!= 3) 

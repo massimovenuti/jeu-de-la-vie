@@ -20,7 +20,7 @@
 #define PATH "grilles/"
 #define EXTENSION ".txt"
 
-extern calcul_voisins compte_voisins_vivants;
+extern int (*compte_voisins_vivants)(int, int, grille);
 extern int vieillissement;
 
 // affichage d'un trait horizontal

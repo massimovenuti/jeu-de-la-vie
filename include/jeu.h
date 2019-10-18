@@ -15,8 +15,6 @@
 #define VIEILLISSEMENT_INIT 1
 #define TEMPS_INIT 1
 
-typedef int (*calcul_voisins)(int, int, grille);
-
 /**
  * \fn static inline int modulo(int i, int m)
  * \brief Fonction modulo modifiée pour traiter correctement les bords d'une grille dans le calcul des voisins avec bords cycliques.
