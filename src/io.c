@@ -34,7 +34,7 @@ void affiche_trait (int c){
 void affiche_ligne (int c, int* ligne){
 	int i;
 	for (i=0; i<c; ++i) 
-		if (ligne[i] == 0 ) printf ("|   "); else printf ("| O ");
+		if (ligne[i] == 0 ) printf ("|   "); else printf ("| %d ", ligne[i]);
 	printf("|\n");
 	return;
 }
@@ -57,11 +57,30 @@ void affiche_grille (grille g){
 	return;
 }
 
-void affiche_temps(int temps, grille g) {
-	efface_grille(g);
-	printf("%d", temps);
-	affiche_grille(g);
-	return;
+void affiche_temps(int temps) {
+	printf("Temps : %d\n", temps);
+}
+
+void affiche_vieillissement() {
+	if (vieillissement)
+		printf("Vieillissement : activé");
+	else 
+		printf("Vieillissement : désactivé");
+}
+
+void affiche_calcul_voisinage() {
+	if (compte_voisins_vivants == compte_voisins_vivants_cyclique) 
+		printf("Voisinage cyclique : activé\n");
+	else 
+		printf("Voisinage cyclique : désactivé\n");
+}
+
+void affichage(grille *g, int temps) {
+	efface_grille(*g);
+	affiche_temps(temps);
+	affiche_calcul_voisinage();
+	affiche_vieillissement();
+	affiche_grille(*g);
 }
 
 /**
@@ -71,7 +90,7 @@ void affiche_temps(int temps, grille g) {
  * \param g Grille : grille à effacer.
  */
 void efface_grille (grille g){
-    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 5); 
+    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 100);
 }
 
 /**
@@ -84,20 +103,20 @@ void efface_grille (grille g){
 void debut_jeu(grille *g, grille *gc){
 	char c = getchar();
 	char extension[] = EXTENSION;
-	int temps = 0;
+	int temps = TEMPS_INIT;
 
 	while (c != 'q') // touche 'q' pour quitter
-	{ 
+	{
 		switch (c) {
 			case '\n' : 
 			{ // touche "entree" pour évoluer
 				temps++;
 				evolue(g,gc);
-				affiche_temps(temps, *g);
+				affichage(g, temps);
 				break;
 			}
 			case 'n' : 
-			{
+			{ // touche "n" pour changer de grille
 				temps = 0;
 				char nomFichier[TAILLE_MAX];
 				char path[TAILLE_MAX] = PATH;
@@ -112,8 +131,22 @@ void debut_jeu(grille *g, grille *gc){
 
 				init_grille_from_file(path,g);
 				alloue_grille (g->nbl, g->nbc, gc);
-				affiche_grille(*g);
+				affichage(g, temps);
 
+				break;
+			}
+			case 'c' :
+			{ // touche "c" pour activer/désactiver le voisinage cyclique
+				if (compte_voisins_vivants == compte_voisins_vivants_cyclique)
+					compte_voisins_vivants = compte_voisins_vivants_non_cyclique;
+				else 
+					compte_voisins_vivants = compte_voisins_vivants_cyclique;
+				break;
+			}			
+				
+			case 'v' :
+			{ // touche "v" pour activer/désactiver le vieillissement
+				vieillissement = !vieillissement;
 				break;
 			}
 			default : 
@@ -122,7 +155,7 @@ void debut_jeu(grille *g, grille *gc){
 				break;
 			}
 		}
-		c = getchar(); 
+		c = getchar();
 	}
 	return;	
 }
