@@ -22,24 +22,48 @@ void \hyperlink{io_8c_a3f3ff78e56fcf21a932ff73b70635554}{affiche\+\_\+ligne} (in
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille. \end{DoxyCompactList}\item 
 void \hyperlink{io_8c_a90cb8ec05374b46d9995705ed4954f34}{affiche\+\_\+grille} (\hyperlink{structgrille}{grille} g)
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_afec97c7f0ca09173b533e29ff31bd286}{affiche\+\_\+temps} (int temps)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage du temps d\textquotesingle{}évolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}\label{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}} 
+void \hyperlink{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}{affiche\+\_\+vieillissement} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de l\textquotesingle{}état du vieillissement des cellules (activé ou non). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io_8c_aa49ae01960af6777be7df4da33fff6fc}\label{io_8c_aa49ae01960af6777be7df4da33fff6fc}} 
+void \hyperlink{io_8c_aa49ae01960af6777be7df4da33fff6fc}{affiche\+\_\+calcul\+\_\+voisinage} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de l\textquotesingle{}état du voisinage cyclique (activé ou non). \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_a8cd33aec0eeec1aa557f95ea97790181}{affichage} (\hyperlink{structgrille}{grille} $\ast$g, int temps)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage des informations (temps, état vieillissement des celulles, état voisinage cyclique). \end{DoxyCompactList}\item 
 void \hyperlink{io_8c_ab36a6f8957cd3e682119007836ce6ad5}{efface\+\_\+grille} (\hyperlink{structgrille}{grille} g)
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}effacement d\textquotesingle{}une grille. \end{DoxyCompactList}\item 
 void \hyperlink{io_8c_a88493b3c55828670e47150a95ed7db5b}{debut\+\_\+jeu} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
-\begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu. Saisir la touche q permet de quitter le jeu, entrée permet de faire évoluer le jeu d\textquotesingle{}un temps, n permet d\textquotesingle{}entrée une nouvelle grille (ex \+: grille1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu. Saisir la touche \textquotesingle{}q\textquotesingle{} fait quitter le jeu, \textquotesingle{}entrée\textquotesingle{} fait évoluer le jeu d\textquotesingle{}un pas temps, \textquotesingle{}n\textquotesingle{} fait charger une nouvelle grille (ex \+: saisir grille1), \textquotesingle{}c\textquotesingle{} fait activer/désactiver le voisinage cyclique, \textquotesingle{}v\textquotesingle{} fait activer/désactiver le vieillissement des cellules. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
 Gestion des entrées/sorties du jeu de la vie. 
 
 \begin{DoxyAuthor}{Auteur}
-Massimo Venuti 
+Massimo Venuti
 \end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0
-\end{DoxyVersion}
-Affichage des grilles et gestion des saisies du joueur lors du jeu de la vie. 
+Affichage des grilles et des informations du jeu de la vie. Gestion des saisies du joueur. 
 
 \subsection{Documentation des fonctions}
+\mbox{\Hypertarget{io_8c_a8cd33aec0eeec1aa557f95ea97790181}\label{io_8c_a8cd33aec0eeec1aa557f95ea97790181}} 
+\index{io.\+c@{io.\+c}!affichage@{affichage}}
+\index{affichage@{affichage}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affichage()}{affichage()}}
+{\footnotesize\ttfamily void affichage (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{int}]{temps }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage des informations (temps, état vieillissement des celulles, état voisinage cyclique). 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+{\em temps} & Entier \+: temps d\textquotesingle{}évolution. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{io_8c_a90cb8ec05374b46d9995705ed4954f34}\label{io_8c_a90cb8ec05374b46d9995705ed4954f34}} 
 \index{io.\+c@{io.\+c}!affiche\+\_\+grille@{affiche\+\_\+grille}}
 \index{affiche\+\_\+grille@{affiche\+\_\+grille}!io.\+c@{io.\+c}}
@@ -72,6 +96,21 @@ Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille.
 {\em ligne} & Tableau d\textquotesingle{}entiers \+: ligne de la grille. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{io_8c_afec97c7f0ca09173b533e29ff31bd286}\label{io_8c_afec97c7f0ca09173b533e29ff31bd286}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+temps@{affiche\+\_\+temps}}
+\index{affiche\+\_\+temps@{affiche\+\_\+temps}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+temps()}{affiche\_temps()}}
+{\footnotesize\ttfamily void affiche\+\_\+temps (\begin{DoxyParamCaption}\item[{int}]{temps }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage du temps d\textquotesingle{}évolution. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temps} & Entier \+: temps d\textquotesingle{}évolution. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{io_8c_a634cf584c380ce221d5d4199f3e813bd}\label{io_8c_a634cf584c380ce221d5d4199f3e813bd}} 
 \index{io.\+c@{io.\+c}!affiche\+\_\+trait@{affiche\+\_\+trait}}
 \index{affiche\+\_\+trait@{affiche\+\_\+trait}!io.\+c@{io.\+c}}
@@ -95,7 +134,7 @@ Fonction d\textquotesingle{}affichage d\textquotesingle{}un trait horizontal.
 
 
 
-Fonction pour débuter le jeu. Saisir la touche q permet de quitter le jeu, entrée permet de faire évoluer le jeu d\textquotesingle{}un temps, n permet d\textquotesingle{}entrée une nouvelle grille (ex \+: grille1). 
+Fonction pour débuter le jeu. Saisir la touche \textquotesingle{}q\textquotesingle{} fait quitter le jeu, \textquotesingle{}entrée\textquotesingle{} fait évoluer le jeu d\textquotesingle{}un pas temps, \textquotesingle{}n\textquotesingle{} fait charger une nouvelle grille (ex \+: saisir grille1), \textquotesingle{}c\textquotesingle{} fait activer/désactiver le voisinage cyclique, \textquotesingle{}v\textquotesingle{} fait activer/désactiver le vieillissement des cellules. 
 
 
 \begin{DoxyParams}{Paramètres}

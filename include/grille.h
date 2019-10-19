@@ -2,12 +2,9 @@
  * \file grille.h
  * \brief Fichier d'en-tête du fichier source grille.c
  * \author Massimo Venuti
- * \version 1.0
  *
- * Prototypes des fonctions et structure grille.
  *
  */
-
 #ifndef __GRILLE_H
 #define __GRILLE_H
 
@@ -18,19 +15,40 @@
 
 /**
  * \struct grille
- * 
  * Une grille est définie par un nombre de lignes, un nombre de colonnes et un tableau de tableaux de cellules.
  */
 typedef struct {int nbl; int nbc; int** cellules;} grille;
- 
-// alloue une grille de taille l*c, et initialise toutes les cellules à mortes
+
+
+/**
+ * \fn void alloue_grille (int l, int c, grille* g)
+ * \brief Fonction d'allocation d'une grille de taille l*c, initialise toutes les cellules à mortes.
+ *
+ * \param l Entier : nombre de lignes.
+ * \param c Entier : nombre de colonnes.
+ * \param g Adresse de la grille à allouer.
+ */
 void alloue_grille (int l, int c, grille* g);
 
-// libère une grille
+
+/**
+ * \fn void libere_grille (grille* g)
+ * \brief Fonction de libération d'une grille.
+ *
+ * \param g Adresse de la grille à libérer.
+ */
 void libere_grille (grille* g);
 
-// alloue et initalise la grille g à partir d'un fichier
+
+/**
+ * \fn void init_grille_from_file (char * filename, grille* g)
+ * \brief Fonction d'allocation et d'initalisation d'une grille à partir d'un fichier.
+ *
+ * \param filename Chaine de caractères : nom du fichier dans lequel se trouve la configuration initiale de la grille.
+ * \param g Adresse de la grille à initialiser.
+ */
 void init_grille_from_file (char * filename, grille* g);
+
 
 /**
  * \fn static inline void set_vivante(int i, int j, grille g)
@@ -65,7 +83,13 @@ static inline void set_morte(int i, int j, grille g){g.cellules[i][j] = 0;}
 static inline int est_vivante(int i, int j, grille g) {return g.cellules[i][j] > 0;}
 
 
-// recopie gs dans gd (sans allocation)
+/**
+ * \fn void copie_grille (grille gs, grille gd)
+ * \brief Fonction de copie d'une grille (sans allocation).
+ *
+ * \param gs Grille : grille à copier (source).
+ * \param gd Grille : grille à modifier (destination).
+ */
 void copie_grille (grille gs, grille gd);
 
 #endif

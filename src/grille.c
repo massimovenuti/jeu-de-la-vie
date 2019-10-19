@@ -2,22 +2,12 @@
  * \file grille.c
  * \brief Gestion des grilles du jeu de la vie
  * \author Massimo Venuti
- * \version 1.0
  *
  * Création / destruction et accès aux fichiers externes des grilles du jeu de la vie.
  *
  */
 #include "grille.h"
 
-
-/**
- * \fn void alloue_grille (int l, int c, grille* g)
- * \brief Fonction d'allocation d'une grille de taille l*c, initialise toutes les cellules à mortes.
- *
- * \param l Entier : nombre de lignes.
- * \param c Entier : nombre de colonnes.
- * \param g Adresse de la grille à allouer.
- */
 void alloue_grille (int l, int c, grille* g)
 {
 	int i;
@@ -38,25 +28,12 @@ void alloue_grille (int l, int c, grille* g)
 }
 
 
-/**
- * \fn void libere_grille (grille* g)
- * \brief Fonction de libération d'une grille.
- *
- * \param g Adresse de la grille à libérer.
- */
 void libere_grille (grille* g)
 {
 	free(g->cellules);
 }
 
 
-/**
- * \fn void init_grille_from_file (char * filename, grille* g)
- * \brief Fonction d'allocation et d'initalisation d'une grille à partir d'un fichier.
- *
- * \param filename Chaine de caractères : nom du fichier dans lequel se trouve la configuration initiale de la grille.
- * \param g Adresse de la grille à initialiser.
- */
 void init_grille_from_file (char * filename, grille* g){
 	FILE * pfile = NULL;
 	pfile = fopen(filename, "r");
@@ -81,13 +58,6 @@ void init_grille_from_file (char * filename, grille* g){
 }
 
 
-/**
- * \fn void copie_grille (grille gs, grille gd)
- * \brief Fonction de copie d'une grille (sans allocation).
- *
- * \param gs Grille : grille à copier (source).
- * \param gd Grille : grille à modifier (destination).
- */
 void copie_grille (grille gs, grille gd){
 	int i, j;
 	for (i=0; i<gs.nbl; ++i) for (j=0; j<gs.nbc; ++j) gd.cellules[i][j] = gs.cellules[i][j];

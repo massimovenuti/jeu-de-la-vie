@@ -2,12 +2,9 @@
  * \file jeu.h
  * \brief Fichier d'en-tête du fichier source jeu.c
  * \author Massimo Venuti
- * \version 1.0
  *
- * Prototypes des fonctions et fonction modulo.
  *
  */
-
 #ifndef __JEU_H
 #define __JEU_H
 
@@ -24,13 +21,38 @@
  */
 static inline int modulo(int i, int m) {return (i+m)%m;}
 
-// compte le nombre de voisins vivants de la cellule (i,j)
-// les bords sont cycliques.
+
+/**
+ * \fn int compte_voisins_vivants_cyclique (int i, int j, grille g)
+ * \brief Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords sont cycliques.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème colonne de la grille.
+ * \param g Grille : grille en jeu.
+ * \return Entier : nombre de voisins vivants d'une cellule 
+ */
 int compte_voisins_vivants_cyclique (int i, int j, grille g);
 
+
+/**
+ * \fn int compte_voisins_vivants_non_cyclique (int i, int j, grille g)
+ * \brief Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords ne sont pas cycliques.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème colonne de la grille.
+ * \param g Grille : grille en jeu.
+ * \return Entier : nombre de voisins vivants d'une cellule 
+ */
 int compte_voisins_vivants_non_cyclique (int i, int j, grille g);
 
-// fait évoluer la grille g d'un pas de temps
+
+/**
+ * \fn void evolue (grille *g, grille *gc)
+ * \brief Fonction faisant évoluer la grille d'un pas de temps.
+ *
+ * \param gc Adresse de la grille servant de copie temporaire pour le programme.
+ * \param g Adresse de la grille en jeu.
+ */
 void evolue (grille *g, grille *gc);
 
 #endif

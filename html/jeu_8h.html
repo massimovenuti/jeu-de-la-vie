@@ -26,7 +26,6 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Jeu de la Vie
-   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -60,13 +59,14 @@ $(document).ready(function(){initNavTree('jeu_8h.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier jeu.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Règles du jeu de la vie. ">jeu.c</a>.  
+<p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Evolutions du jeu de la vie. ">jeu.c</a>.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="grille_8h_source.html">grille.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -82,7 +82,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="jeu_8h__dep__incl.png" border="0" usemap="#include_2jeu_8hdep" alt=""/></div>
 <map name="include_2jeu_8hdep" id="include_2jeu_8hdep">
-<area shape="rect" id="node2" href="jeu_8c.html" title="Règles du jeu de la vie. " alt="" coords="5,80,77,107"/>
+<area shape="rect" id="node2" href="jeu_8c.html" title="Evolutions du jeu de la vie. " alt="" coords="5,80,77,107"/>
 <area shape="rect" id="node3" href="main_8c.html" title="Jeu de la vie. " alt="" coords="73,155,156,181"/>
 <area shape="rect" id="node4" href="io_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io.c. " alt="" coords="152,80,240,107"/>
 <area shape="rect" id="node5" href="io_8c.html" title="Gestion des entrées/sorties du jeu de la vie. " alt="" coords="181,155,246,181"/>
@@ -91,32 +91,42 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 </div>
 <p><a href="jeu_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a711cc76b16996b0312dfa1f24f183f3c"><td class="memItemLeft" align="right" valign="top"><a id="a711cc76b16996b0312dfa1f24f183f3c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VIEILLISSEMENT_INIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a711cc76b16996b0312dfa1f24f183f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cdb10a572da681b1f293759439f437e"><td class="memItemLeft" align="right" valign="top"><a id="a6cdb10a572da681b1f293759439f437e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TEMPS_INIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a6cdb10a572da681b1f293759439f437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a8cc2b5e88ad337fae1efad3f36d33f01">modulo</a> (int i, int m)</td></tr>
 <tr class="memdesc:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction modulo modifiée pour traiter correctement les bords d'une grille dans le calcul des voisins avec bords cycliques.  <a href="#a8cc2b5e88ad337fae1efad3f36d33f01">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#adf9adf6ee75bcfbe164ac465ca5e4f82">compte_voisins_vivants</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
-<tr class="memdesc:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction comptant le nombre de voisins vivants d'une cellule [i,j], les bords sont cycliques.  <a href="#adf9adf6ee75bcfbe164ac465ca5e4f82">Plus de détails...</a><br /></td></tr>
-<tr class="separator:adf9adf6ee75bcfbe164ac465ca5e4f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919a35926d94b71717909ecc50233f26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a919a35926d94b71717909ecc50233f26">compte_voisins_vivants_cyclique</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a919a35926d94b71717909ecc50233f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords sont cycliques.  <a href="#a919a35926d94b71717909ecc50233f26">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a919a35926d94b71717909ecc50233f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8fdd206d197391527920bbbc137eef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a2e8fdd206d197391527920bbbc137eef">compte_voisins_vivants_non_cyclique</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a2e8fdd206d197391527920bbbc137eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords ne sont pas cycliques.  <a href="#a2e8fdd206d197391527920bbbc137eef">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2e8fdd206d197391527920bbbc137eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8f751a97ad1847db23c5ba17be7802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#ada8f751a97ad1847db23c5ba17be7802">evolue</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
 <tr class="memdesc:ada8f751a97ad1847db23c5ba17be7802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant évoluer la grille d'un pas de temps.  <a href="#ada8f751a97ad1847db23c5ba17be7802">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ada8f751a97ad1847db23c5ba17be7802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Règles du jeu de la vie. ">jeu.c</a>. </p>
+<div class="textblock"><p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Evolutions du jeu de la vie. ">jeu.c</a>. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Massimo Venuti </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
-<p>Prototypes des fonctions et fonction modulo. </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="adf9adf6ee75bcfbe164ac465ca5e4f82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf9adf6ee75bcfbe164ac465ca5e4f82">&#9670;&nbsp;</a></span>compte_voisins_vivants()</h2>
+<a id="a919a35926d94b71717909ecc50233f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919a35926d94b71717909ecc50233f26">&#9670;&nbsp;</a></span>compte_voisins_vivants_cyclique()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int compte_voisins_vivants </td>
+          <td class="memname">int compte_voisins_vivants_cyclique </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em>, </td>
@@ -141,7 +151,52 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction comptant le nombre de voisins vivants d'une cellule [i,j], les bords sont cycliques. </p>
+<p>Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords sont cycliques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Entier : i-ème ligne de la grille. </td></tr>
+    <tr><td class="paramname">j</td><td>Entier : j-ème colonne de la grille. </td></tr>
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : nombre de voisins vivants d'une cellule </dd></dl>
+
+</div>
+</div>
+<a id="a2e8fdd206d197391527920bbbc137eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8fdd206d197391527920bbbc137eef">&#9670;&nbsp;</a></span>compte_voisins_vivants_non_cyclique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compte_voisins_vivants_non_cyclique </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction comptant le nombre de voisins vivants d'une cellule [i,j] : les bords ne sont pas cycliques. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>Entier : i-ème ligne de la grille. </td></tr>

@@ -2,7 +2,7 @@
 \label{jeu_8c}\index{src/jeu.\+c@{src/jeu.\+c}}
 
 
-Règles du jeu de la vie.  
+Evolutions du jeu de la vie.  
 
 
 {\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
@@ -16,33 +16,69 @@ Graphe des dépendances par inclusion de jeu.\+c\+:\nopagebreak
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}{compte\+\_\+voisins\+\_\+vivants} (int i, int j, \hyperlink{structgrille}{grille} g)
-\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_a919a35926d94b71717909ecc50233f26}{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords sont cycliques. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_a2e8fdd206d197391527920bbbc137eef}{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords ne sont pas cycliques. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{jeu_8c_ac2624dd4a3a3e9d366630123b7b0c7d2}\label{jeu_8c_ac2624dd4a3a3e9d366630123b7b0c7d2}} 
+void {\bfseries vieillit} (int i, int j, \hyperlink{structgrille}{grille} g)
+\item 
+\mbox{\Hypertarget{jeu_8c_a9507aa70f9cb11378d944a52045b0093}\label{jeu_8c_a9507aa70f9cb11378d944a52045b0093}} 
+int {\bfseries age\+\_\+cellule} (int i, int j, \hyperlink{structgrille}{grille} g)
+\item 
 void \hyperlink{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}{evolue} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
 \begin{DoxyCompactList}\small\item\em Fonction faisant évoluer la grille d\textquotesingle{}un pas de temps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{jeu_8c_af587b56ea61a80b468caff5a89715cd7}\label{jeu_8c_af587b56ea61a80b468caff5a89715cd7}} 
+int($\ast$ \hyperlink{jeu_8c_af587b56ea61a80b468caff5a89715cd7}{compte\+\_\+voisins\+\_\+vivants} )(int, int, \hyperlink{structgrille}{grille}) = \&\hyperlink{jeu_8h_a919a35926d94b71717909ecc50233f26}{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}
+\begin{DoxyCompactList}\small\item\em Pointeur de fonction contenant l\textquotesingle{}adresse de la fonction de calcul du voisinage d\textquotesingle{}une cellule. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{jeu_8c_a852233e3ec97f7c44944c67998337e26}\label{jeu_8c_a852233e3ec97f7c44944c67998337e26}} 
+int \hyperlink{jeu_8c_a852233e3ec97f7c44944c67998337e26}{vieillissement} = V\+I\+E\+I\+L\+L\+I\+S\+S\+E\+M\+E\+N\+T\+\_\+\+I\+N\+IT
+\begin{DoxyCompactList}\small\item\em Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Règles du jeu de la vie. 
+Evolutions du jeu de la vie. 
 
 \begin{DoxyAuthor}{Auteur}
 Massimo Venuti 
 \end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0 
-\end{DoxyVersion}
 
 
 \subsection{Documentation des fonctions}
-\mbox{\Hypertarget{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}\label{jeu_8c_adf9adf6ee75bcfbe164ac465ca5e4f82}} 
-\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}}
-\index{compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}!jeu.\+c@{jeu.\+c}}
-\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants()}{compte\_voisins\_vivants()}}
-{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{jeu_8c_a919a35926d94b71717909ecc50233f26}\label{jeu_8c_a919a35926d94b71717909ecc50233f26}} 
+\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique()}{compte\_voisins\_vivants\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
 
 
 
-Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. 
+Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords sont cycliques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & Entier \+: i-\/ème ligne de la grille. \\
+\hline
+{\em j} & Entier \+: j-\/ème colonne de la grille. \\
+\hline
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: nombre de voisins vivants d\textquotesingle{}une cellule 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8c_a2e8fdd206d197391527920bbbc137eef}\label{jeu_8c_a2e8fdd206d197391527920bbbc137eef}} 
+\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique()}{compte\_voisins\_vivants\_non\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords ne sont pas cycliques. 
 
 
 \begin{DoxyParams}{Paramètres}

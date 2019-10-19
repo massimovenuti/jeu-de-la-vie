@@ -20,13 +20,24 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \includegraphics[width=261pt]{jeu_8h__dep__incl}
 \end{center}
 \end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{jeu_8h_a711cc76b16996b0312dfa1f24f183f3c}\label{jeu_8h_a711cc76b16996b0312dfa1f24f183f3c}} 
+\#define {\bfseries V\+I\+E\+I\+L\+L\+I\+S\+S\+E\+M\+E\+N\+T\+\_\+\+I\+N\+IT}~1
+\item 
+\mbox{\Hypertarget{jeu_8h_a6cdb10a572da681b1f293759439f437e}\label{jeu_8h_a6cdb10a572da681b1f293759439f437e}} 
+\#define {\bfseries T\+E\+M\+P\+S\+\_\+\+I\+N\+IT}~1
+\end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 static int \hyperlink{jeu_8h_a8cc2b5e88ad337fae1efad3f36d33f01}{modulo} (int i, int m)
 \begin{DoxyCompactList}\small\item\em Fonction modulo modifiée pour traiter correctement les bords d\textquotesingle{}une grille dans le calcul des voisins avec bords cycliques. \end{DoxyCompactList}\item 
-int \hyperlink{jeu_8h_adf9adf6ee75bcfbe164ac465ca5e4f82}{compte\+\_\+voisins\+\_\+vivants} (int i, int j, \hyperlink{structgrille}{grille} g)
-\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8h_a919a35926d94b71717909ecc50233f26}{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords sont cycliques. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8h_a2e8fdd206d197391527920bbbc137eef}{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords ne sont pas cycliques. \end{DoxyCompactList}\item 
 void \hyperlink{jeu_8h_ada8f751a97ad1847db23c5ba17be7802}{evolue} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
 \begin{DoxyCompactList}\small\item\em Fonction faisant évoluer la grille d\textquotesingle{}un pas de temps. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -37,21 +48,40 @@ Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{jeu_8c}{jeu.\
 \begin{DoxyAuthor}{Auteur}
 Massimo Venuti 
 \end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0
-\end{DoxyVersion}
-Prototypes des fonctions et fonction modulo. 
+
 
 \subsection{Documentation des fonctions}
-\mbox{\Hypertarget{jeu_8h_adf9adf6ee75bcfbe164ac465ca5e4f82}\label{jeu_8h_adf9adf6ee75bcfbe164ac465ca5e4f82}} 
-\index{jeu.\+h@{jeu.\+h}!compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}}
-\index{compte\+\_\+voisins\+\_\+vivants@{compte\+\_\+voisins\+\_\+vivants}!jeu.\+h@{jeu.\+h}}
-\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants()}{compte\_voisins\_vivants()}}
-{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{jeu_8h_a919a35926d94b71717909ecc50233f26}\label{jeu_8h_a919a35926d94b71717909ecc50233f26}} 
+\index{jeu.\+h@{jeu.\+h}!compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}!jeu.\+h@{jeu.\+h}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique()}{compte\_voisins\_vivants\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
 
 
 
-Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]}, les bords sont cycliques. 
+Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords sont cycliques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & Entier \+: i-\/ème ligne de la grille. \\
+\hline
+{\em j} & Entier \+: j-\/ème colonne de la grille. \\
+\hline
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: nombre de voisins vivants d\textquotesingle{}une cellule 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8h_a2e8fdd206d197391527920bbbc137eef}\label{jeu_8h_a2e8fdd206d197391527920bbbc137eef}} 
+\index{jeu.\+h@{jeu.\+h}!compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}!jeu.\+h@{jeu.\+h}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique()}{compte\_voisins\_vivants\_non\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction comptant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} \+: les bords ne sont pas cycliques. 
 
 
 \begin{DoxyParams}{Paramètres}
