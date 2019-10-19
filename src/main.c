@@ -38,7 +38,6 @@ int main (int argc, char ** argv) {
 	affiche_grille(g);
 	affichage(&g, TEMPS_INIT);
 
-	
 	debut_jeu(&g, &gc);
 
 	libere_grille(&g);
