@@ -60,7 +60,6 @@ void affiche_calcul_voisinage() {
 
 
 void affichage(grille *g, int temps) {
-	efface_grille(*g);
 	affiche_temps(temps);
 	affiche_calcul_voisinage();
 	affiche_vieillissement();
@@ -69,7 +68,7 @@ void affichage(grille *g, int temps) {
 
 
 void efface_grille (grille g){
-    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 100);
+    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 7);
 }
 
 
@@ -85,6 +84,7 @@ void debut_jeu(grille *g, grille *gc){
 			{ // touche "entree" pour évoluer
 				temps++;
 				evolue(g,gc);
+				efface_grille(*g);
 				affichage(g, temps);
 				break;
 			}
@@ -94,6 +94,7 @@ void debut_jeu(grille *g, grille *gc){
 				char nomFichier[TAILLE_MAX];
 				char path[TAILLE_MAX] = PATH;
 
+				efface_grille(*g);
 				libere_grille(g);
 				libere_grille(gc);
 
@@ -104,8 +105,8 @@ void debut_jeu(grille *g, grille *gc){
 
 				init_grille_from_file(path,g);
 				alloue_grille (g->nbl, g->nbc, gc);
-				affichage(g, temps);
 
+				affichage(g, temps);
 				break;
 			}
 			case 'c' :

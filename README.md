@@ -4,17 +4,30 @@
 
 ### Lancement du jeu
 
-Le jeu se lance dans un terminal en entrant la commande : `./main <nom_grille>`.
+#### Avant d'executer le programme
+
+##### Obligatoire
+
+* Générer l'executable : `make`
+
+##### Facultatif
+
+* Générer la documentation : `make doc`
+* Générer l'archive avec le code source, le Doxyfile et le Readme : `make dist`
+
+#### Execution du programme
+
+Le jeu se lance dans un terminal en entrant la commande : `main <nom_grille>` (windows) | `./main <nom_grille>` (linux).
 L'extension et le chemin d'accès de la grille ne doivent pas être saisis.
 
-*Exemple :*
+*Exemple (sous linux):*
 
     ./main grille1
 
 ### Informations importantes
 
 Le terminal devra être mis en plein écran pour éviter tout problème d'affichage.
-La saisie d'une nouvelle grille se fait de la même manière qu'au lancement du programme.
+La saisie d'une nouvelle grille se fait de la même manière qu'au lancement du programme ; sans chemin d'accès ni extension de fichier.
 Les grilles se trouvent dans le dossier `/grilles`.
 
 ### Versions
@@ -25,4 +38,5 @@ Version **X**.**Y**.**Z** :
 * **Y** : ajouts de fonctionnalités.
 * **Z** : corrections de bugs, modifications mineures.
 
-La dernière version possible pour un niveau du Jeu de la Vie correspond à sa forme la plus stable.
+La dernière version disponible pour un niveau du Jeu de la Vie correspond à sa version la plus stable.
+**La dernière version disponible du projet correspond à sa forme la plus aboutie.**

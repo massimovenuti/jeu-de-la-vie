@@ -35,7 +35,6 @@ int main (int argc, char ** argv) {
 	grille g, gc;
 	init_grille_from_file(path,&g);
 	alloue_grille (g.nbl, g.nbc, &gc);
-	affiche_grille(g);
 	affichage(&g, TEMPS_INIT);
 
 	debut_jeu(&g, &gc);

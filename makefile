@@ -1,37 +1,53 @@
-.PHONY: all doc clean
-
 CC = gcc -g
 CFLAGS = -W -Wall
 IFLAGS = -I include
-OPATH = obj
-OBJETS = $(OPATH)/main.o $(OPATH)/jeu.o $(OPATH)/io.o $(OPATH)/grille.o
 
+OPATH = obj/
+BPATH = bin/
+DPATH = doc/
 vpath %.o obj
 vpath %.c src
 vpath %.h include
 vpath main bin
 
-main : main.o jeu.o io.o grille.o
+OBJETS = $(OPATH)main.o $(OPATH)grille.o $(OPATH)jeu.o $(OPATH)io.o
+
+#-------------------------------------------------------------------------#
+
+main : main.o jeu.o io.o grille.o | $(BPATH)
 	$(CC) $(CFLAGS) -o $@ $(OBJETS)
-	mv $@ bin/
+	mv $@ $(BPATH)
 
 main.o : main.c jeu.h io.h grille.h
 jeu.o : jeu.c jeu.h
 io.o : io.c io.h
 grille.o : grille.c grille.h
 
-%.o : 
+%.o : | $(OPATH)
 	$(CC) $(CFLAGS) -c $< $(IFLAGS)
-	mv $@ $(OPATH)/
+	mv $@ $(OPATH)
 
-$(OPATH)/ :
+#-------------------------------------------------------------------------#
+
+$(BPATH) :
 	mkdir $@
 
-doc :
+$(DPATH) :
+	mkdir $@
+
+$(OPATH) :
+	mkdir $@
+
+#-------------------------------------------------------------------------#
+
+doc : | $(DPATH)
 	doxygen
+	mv html/ $(DPATH)
+	mv latex/ $(DPATH)
+
 
 clean :
-	rm $(OPATH)/* bin/*
+	rm $(OPATH)* $(BPATH)*
 
 dist :
-	tar -c --xz Doxyfile makefile src/ -f archive.tar.xz  
+	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v2.0.tar.xz 
