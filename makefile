@@ -50,4 +50,4 @@ clean :
 	rm $(OPATH)* $(BPATH)*
 
 dist :
-	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v2.0.tar.xz 
+	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v2.2.2.tar.xz 

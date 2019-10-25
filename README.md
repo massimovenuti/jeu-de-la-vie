@@ -13,7 +13,7 @@
 ##### Facultatif
 
 * Générer la documentation : `make doc`
-* Générer l'archive avec le code source, le Doxyfile et le Readme : `make dist`
+* Générer l'archive avec le code source, le Doxyfile et le makefile : `make dist`
 
 #### Execution du programme
 
@@ -39,4 +39,4 @@ Version **X**.**Y**.**Z** :
 * **Z** : corrections de bugs, modifications mineures.
 
 La dernière version disponible pour un niveau du Jeu de la Vie correspond à sa version la plus stable.
-**La dernière version disponible du projet correspond à sa forme la plus aboutie.**
+De nombreuses corrections de bug ont été faites entre le niveau 1 et le niveau 2 : **la dernière version disponible du projet correspond donc à sa forme la plus aboutie**.
