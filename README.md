@@ -12,7 +12,7 @@
 
 ##### Facultatif
 
-* Générer la documentation : `make doc`
+* Générer la documentation : `make doxygen`
 * Générer l'archive avec le code source, le Doxyfile et le makefile : `make dist`
 
 #### Execution du programme

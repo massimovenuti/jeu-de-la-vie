@@ -19,7 +19,13 @@ void affiche_trait (int c){
 void affiche_ligne (int c, int* ligne){
 	int i;
 	for (i=0; i<c; ++i) 
-		if (ligne[i] == 0 ) printf ("|   "); else printf ("| %d ", ligne[i]);
+		if (ligne[i] == 0 ) 
+			printf ("|   "); 
+		else if (ligne[i] > 0)
+			printf ("| %d ", ligne[i]);
+		else
+			printf ("| X ");
+		
 	printf("|\n");
 	return;
 }

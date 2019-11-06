@@ -74,7 +74,7 @@ void evolue (grille *g, grille *gc){
 				else
 					vieillit(i,j,*g);
 			}
-			else 
+			else if (age_cellule(i,j,*g)==0)
 			{ // evolution d'une cellule morte
 				if ( v==3 ) set_vivante(i,j,*g);
 			}

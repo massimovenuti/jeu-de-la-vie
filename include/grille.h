@@ -70,8 +70,16 @@ static inline void set_vivante(int i, int j, grille g){g.cellules[i][j] = 1;}
  */
 static inline void set_morte(int i, int j, grille g){g.cellules[i][j] = 0;}
 
+/**
+ * \fn static inline void set_nonViable(int i, int j, grille g)
+ * \brief Fonction rendant non viable la cellule [i,j] d'une grille.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème ligne de la grille
+ * \param g Grille : grille en jeu.
+ */
+static inline void set_nonViable(int i, int j, grille g){g.cellules[i][j] = -1;}
 
-// teste si la cellule (i,j) de la grille g est vivante
 /**
  * \fn static inline int est_vivante(int i, int j, grille g)
  * \brief Fonction testant si la cellule [i,j] d'une grille est vivante.

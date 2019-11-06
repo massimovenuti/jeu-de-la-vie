@@ -40,7 +40,7 @@ $(OPATH) :
 
 #-------------------------------------------------------------------------#
 
-doc : | $(DPATH)
+doxygen : | $(DPATH)
 	doxygen
 	mv html/ $(DPATH)
 	mv latex/ $(DPATH)
