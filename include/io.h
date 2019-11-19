@@ -5,8 +5,8 @@
  *
  *
  */
-#ifndef __IO_H
-#define __IO_H
+#ifndef __IO_H__
+#define __IO_H__
 
 #include <stdio.h>
 #include <string.h>
@@ -49,7 +49,7 @@ void affiche_ligne (int c, int* ligne);
 
 /**
  * \fn void affiche_grille (grille g)
- * \brief Fonction d'affichage d'une grille.
+ * \brief Fonction d'affichage d'une grille en mode texte.
  *
  * \param g Grille : grille à afficher.
  */

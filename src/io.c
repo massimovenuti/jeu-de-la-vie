@@ -1,6 +1,6 @@
 /**
  * \file io.c
- * \brief Gestion des entrées/sorties du jeu de la vie
+ * \brief Gestion des entrées/sorties du jeu de la vie en mode Texte.
  * \author Massimo Venuti
  *
  * Affichage des grilles et des informations du jeu de la vie. Gestion des saisies du joueur.
@@ -22,7 +22,10 @@ void affiche_ligne (int c, int* ligne){
 		if (ligne[i] == 0 ) 
 			printf ("|   "); 
 		else if (ligne[i] > 0)
-			printf ("| %d ", ligne[i]);
+			if (vieillissement)
+				printf ("| %d ", ligne[i]);
+			else
+				printf ("| + ");
 		else
 			printf ("| X ");
 		
@@ -86,6 +89,18 @@ void debut_jeu(grille *g, grille *gc){
 	while (c != 'q') // touche 'q' pour quitter
 	{
 		switch (c) {
+			case 'c' :
+			{ // touche "c" pour activer/désactiver le voisinage cyclique
+				toggle_compte_voisins_vivants();
+				break;
+			}			
+				
+			case 'v' :
+			{ // touche "v" pour activer/désactiver le vieillissement
+				toggle_vieillissement();
+				break;
+			}
+
 			case '\n' : 
 			{ // touche "entree" pour évoluer
 				temps++;
@@ -94,6 +109,7 @@ void debut_jeu(grille *g, grille *gc){
 				affichage(g, temps);
 				break;
 			}
+
 			case 'n' : 
 			{ // touche "n" pour changer de grille
 				temps = 0;
@@ -115,20 +131,7 @@ void debut_jeu(grille *g, grille *gc){
 				affichage(g, temps);
 				break;
 			}
-			case 'c' :
-			{ // touche "c" pour activer/désactiver le voisinage cyclique
-				if (compte_voisins_vivants == compte_voisins_vivants_cyclique)
-					compte_voisins_vivants = &compte_voisins_vivants_non_cyclique;
-				else 
-					compte_voisins_vivants = &compte_voisins_vivants_cyclique;
-				break;
-			}			
-				
-			case 'v' :
-			{ // touche "v" pour activer/désactiver le vieillissement
-				vieillissement = !vieillissement;
-				break;
-			}
+			
 			default : 
 			{ // touche non traitée
 				printf("\n\e[1A");

@@ -46,6 +46,12 @@ int compte_voisins_vivants_cyclique (int i, int j, grille g);
 int compte_voisins_vivants_non_cyclique (int i, int j, grille g);
 
 
+void toggle_compte_voisins_vivants();
+
+
+void toggle_vieillissement();
+
+
 /**
  * \fn void evolue (grille *g, grille *gc)
  * \brief Fonction faisant évoluer la grille d'un pas de temps.

@@ -47,13 +47,26 @@ int compte_voisins_vivants_non_cyclique (int i, int j, grille g){
 }
 
 
-void vieillit (int i, int j, grille g) {
+void vieillit(int i, int j, grille g) {
 	g.cellules[i][j]++;
 }
 
 
-int age_cellule (int i, int j, grille g) {
+int age_cellule(int i, int j, grille g) {
 	return g.cellules[i][j];
+}
+
+
+void toggle_compte_voisins_vivants() {
+	if (compte_voisins_vivants == compte_voisins_vivants_cyclique)
+		compte_voisins_vivants = &compte_voisins_vivants_non_cyclique;
+	else 
+		compte_voisins_vivants = &compte_voisins_vivants_cyclique;
+}
+
+
+void toggle_vieillissement() {
+	vieillissement = !vieillissement;
 }
 
 
