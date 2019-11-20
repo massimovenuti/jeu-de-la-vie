@@ -10,10 +10,12 @@
 #define TAILLE_MAX 200
 #define PATH "grilles/"
 #define EXTENSION ".txt"
-#define SIZEX 850
-#define SIZEY 550
-#define MARGE_HAUT 100
-#define MARGE_COTE 50
+#define SIZEX 1300
+#define SIZEY 650
+#define MARGE_HAUT 50
+#define MARGE_G 50
+#define MARGE_B 50
+#define MARGE_D 530
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,7 +49,9 @@ int taille_case_y(grille g);
  *
  * \param g Grille : grille à afficher.
  */
-void affiche_grille_GUI (grille g, cairo_surface_t *cs, int temps);
+void affiche_grille_GUI (grille g, cairo_surface_t *cs);
+
+void affiche_informations_GUI(cairo_surface_t *cs, int temps);
 
 
 /**
@@ -66,6 +70,6 @@ void affichage_GUI (grille *g, grille *gc);
  * \param gc Adresse de la grille servant de copie temporaire pour le programme.
  * \param g Adresse de la grille en jeu.
  */
-void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy, XEvent e);
+void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy);
 
 #endif
