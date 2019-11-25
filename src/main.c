@@ -12,12 +12,12 @@
 #include <cairo.h>
 #include <cairo-xlib.h>
 #include <X11/Xlib.h>
+#include <X11/keysym.h>
 
 #include "io_gui.h"
 #include "grille.h"
 #include "jeu.h"
 #include "io.h"
-
 
 /**
  * \fn int main (int argc, char ** argv)
@@ -28,23 +28,17 @@
  * \return 0 si aucune erreur.
  */
 int main (int argc, char ** argv) {
-	char path[TAILLE_MAX]=PATH;
-	char extension[TAILLE_MAX]= EXTENSION;
 	
 	if (argc != 2 )
 	{
 		printf("usage : main <fichier grille>");
 		return 1;
-	}
-
-	strcat(strcat(path, argv[1]), extension);
-	
+	}	
 
 	// Initialise la grille
 	grille g, gc;
-	init_grille_from_file(path,&g);
+	init_grille_from_file(argv[1],&g);
 	alloue_grille (g.nbl, g.nbc, &gc);
-	
 
 	// Lancement du jeu
 	if (CAIRO)
@@ -53,7 +47,6 @@ int main (int argc, char ** argv) {
 		affichage(&g, TEMPS_INIT);
 		debut_jeu(&g, &gc);
 	}
-
 
 	// Libère la grille
 	libere_grille(&g);

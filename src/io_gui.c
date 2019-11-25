@@ -12,8 +12,9 @@ int taille_case_x(grille g) {
 	return (SIZEX - MARGE_G - MARGE_D)/g.nbc;
 }
 
+
 int taille_case_y(grille g) {
-	return (SIZEY - MARGE_HAUT - MARGE_B)/g.nbl;
+	return (SIZEY - MARGE_H - MARGE_B)/g.nbl;
 }
 
 
@@ -21,49 +22,39 @@ void affiche_grille_GUI(grille g, cairo_surface_t *cs) {
 	int i,j,x,y;
 	int case_x = taille_case_x(g);
 	int case_y = taille_case_y(g);
-	char str_age[4];
+	char str_age[5];
 	cairo_t *cr;
 	cr=cairo_create(cs);
 
 	// Fond 
-	cairo_set_source_rgb(cr, 0.08, 0.08, 0.08);
+	cairo_set_source_rgb(cr, 0.12, 0.12, 0.12);
 	cairo_paint(cr);
 
 	// Taille police
-	cairo_set_font_size(cr, 15);
+	cairo_set_font_size(cr, 20);
 	
 	// Affiche grille
-	for(i=0, y=MARGE_HAUT ; i < g.nbl; i++, y+=case_y) {
+	for(i=0, y=MARGE_H ; i < g.nbl; i++, y+=case_y) {
 		for(j=0, x=MARGE_G; j < g.nbc; j++, x+=case_x) {
 
-			// Dessin du contour des cases
-			cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-			cairo_move_to(cr, x, y);
-			cairo_line_to(cr, x, y + case_y);
-			cairo_move_to(cr, x, y);
-			cairo_line_to(cr, x + case_x, y);
-			cairo_move_to(cr, x, y + case_y);
-			cairo_line_to(cr, x + case_x, y + case_y);
-			cairo_move_to(cr, x + case_x, y);
-			cairo_line_to(cr, x + case_x, y + case_y);
-			cairo_set_line_width (cr, 2);
-			cairo_stroke(cr);
-
-			// Remplit la case 
-			cairo_rectangle(cr, x, y, case_x, case_y);
+			cairo_rectangle(cr, x, y, case_x-5, case_y-5);
 			
 			if (est_vivante(i,j,g)) {
 				cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
 				cairo_fill(cr);
 				if (vieillissement) {
 					cairo_set_source_rgb(cr, 1.0, 0.6, 0.3);
-					cairo_move_to(cr, x + case_x/2, y + case_y/2);
+					cairo_move_to(cr, x + case_x/2 - 7, y + case_y/2 + 6);
 					sprintf(str_age, "%d", g.cellules[i][j]);
 					cairo_show_text(cr, str_age);
 				}
 			}
 			else if (!est_viable(i,j,g)) {
 				cairo_set_source_rgb(cr, 1., 0.6, 0.3);
+				cairo_fill(cr);	
+			}
+			else {
+				cairo_set_source_rgb(cr, .0, 0.0, 0.0);
 				cairo_fill(cr);	
 			}
 		}
@@ -73,110 +64,214 @@ void affiche_grille_GUI(grille g, cairo_surface_t *cs) {
 
 
 void affiche_informations_GUI(cairo_surface_t *cs, int temps) {
-	char str[250];
-
-	int info_x = (SIZEX - MARGE_D) + (2*MARGE_G);
-	int info_y = MARGE_HAUT + 40;
-	int esp = 35;
+	char str[10];
 	cairo_t *cr;
-	cr=cairo_create(cs);
+	cr=cairo_create(cs);	
 
-	// Fond 2
-	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 0 , MARGE_D - MARGE_G, SIZEY);
-	cairo_set_source_rgb(cr, .1, 0.1, 0.1);
-	cairo_fill(cr);	
 	// Titre "Jeu de la Vie"
-	cairo_move_to(cr, info_x, info_y);
+	cairo_move_to(cr, INFO_X, INFO_Y);
 	cairo_set_source_rgb(cr, 1, 1, 1);
 	cairo_set_font_size(cr, 40);
-	sprintf(str, "Jeu de la Vie");
-	cairo_show_text(cr, str);
+	cairo_show_text(cr, "Jeu de la Vie");
 
 	// Titre "Commandes"
-	cairo_move_to(cr, info_x, info_y+2*esp);
+	cairo_move_to(cr, INFO_X, INFO_Y+3*INTERLIGNE);
 	cairo_set_font_size(cr, 30);
-	sprintf(str, "Commandes");
-	cairo_show_text(cr, str);
+	cairo_show_text(cr, "Commandes");
 
 	// Commandes
 	cairo_set_font_size(cr, 20);
-	cairo_move_to(cr, info_x, info_y+3*esp);
-	sprintf(str, "- Clic-gauche : évoluer");
-	cairo_show_text(cr, str);
-	cairo_move_to(cr, info_x, info_y+4*esp);
-	sprintf(str, "- Clic-droit : quitter");
-	cairo_show_text(cr, str);
-	cairo_move_to(cr, info_x, info_y+5*esp);
-	sprintf(str, "- n : nouvelle grille");
-	cairo_show_text(cr, str);
-	cairo_move_to(cr, info_x, info_y+6*esp);
-	sprintf(str, "- c : activer/désactiver bords cyclique");
-	cairo_show_text(cr, str);
-	cairo_move_to(cr, info_x, info_y+7*esp);
-	sprintf(str, "- v : activer/désactiver vieillissement");
-	cairo_show_text(cr, str);
+	cairo_move_to(cr, INFO_X, INFO_Y+5*INTERLIGNE);
+	cairo_show_text(cr, "- clic-gauche : évoluer");
+	cairo_move_to(cr, INFO_X, INFO_Y+6*INTERLIGNE);
+	cairo_show_text(cr, "- clic-droit : quitter");
+	cairo_move_to(cr, INFO_X, INFO_Y+7*INTERLIGNE);
+	cairo_show_text(cr, "- n : nouvelle grille");
+	cairo_move_to(cr, INFO_X, INFO_Y+8*INTERLIGNE);
+	cairo_show_text(cr, "- c : activer/désactiver bords cyclique");
+	cairo_move_to(cr, INFO_X, INFO_Y+9*INTERLIGNE);
+	cairo_show_text(cr, "- v : activer/désactiver vieillissement");
 
 	// Temps
 	cairo_set_font_size(cr, 20);
 	cairo_set_source_rgb(cr, 1., 0.6, 0.3);
-	cairo_move_to(cr, info_x, info_y + 13*esp);
+	cairo_move_to(cr, INFO_X, INFO_Y + 13*INTERLIGNE);
 	sprintf(str, "%d", temps);
 	cairo_show_text(cr, str);
 
 	// Vieillissement
-	cairo_move_to(cr, info_x + 5 * esp, info_y + 14*esp);
-	(vieillissement) ? sprintf(str, "Vieillissement : ON") : sprintf(str, "Vieillissement : OFF");
-	cairo_show_text(cr, str);
+	cairo_move_to(cr, INFO_X + 5 * INTERLIGNE, INFO_Y + 14*INTERLIGNE);
+	(vieillissement) ? cairo_show_text(cr, "Vieillissement : ON") : cairo_show_text(cr, "Vieillissement : OFF");
 
 	// Voisinage
-	cairo_move_to(cr, info_x, info_y + 14*esp);
-	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? sprintf(str, "Cyclique : ON") : sprintf(str, "Cyclique : OFF");
-	cairo_show_text(cr, str);	
+	cairo_move_to(cr, INFO_X, INFO_Y + 14*INTERLIGNE);
+	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? cairo_show_text(cr, "Cyclique : ON") : cairo_show_text(cr, "Cyclique : OFF");	
 
 	cairo_destroy(cr);
 }
 
 
+char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy) {
+	cairo_t *cr;
+	cr=cairo_create(cs);
+	XEvent e;
+	KeySym k;
+	char* str = malloc(TAILLE_MAX*sizeof(char));
+	strcpy(str, "");
+
+	// Fond 2
+	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H , MARGE_D - MARGE_G, SIZEY - MARGE_H);
+	cairo_set_source_rgb(cr, .12, 0.12, 0.12);
+	cairo_fill(cr);		
+
+	// Titre "Nouvelle grille"
+	cairo_set_font_size(cr, 30);
+	cairo_set_source_rgb(cr, 1.0, 0.6, 0.3);
+	cairo_move_to(cr, INFO_X, INFO_Y + 3 * INTERLIGNE);
+	cairo_show_text(cr, "Nouvelle grille");
+
+	// Zone de texte
+	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 4 *INTERLIGNE , MARGE_D - 2 *MARGE_G, INTERLIGNE+5);
+	cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
+	cairo_fill(cr);
+
+	// Saisie de la nouvelle grille
+	cairo_move_to(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 5 *INTERLIGNE);
+	cairo_set_source_rgb(cr, 0, 0, 0);
+	cairo_set_font_size(cr, 25);
+	while(1) {
+		XNextEvent(dpy, &e);
+		if(e.xkey.keycode == 36) { 										// '\n'
+			break;
+		}
+		else if(e.xbutton.button == Button3) {							// clic-droit
+			break;
+		}
+		else if ((e.xkey.keycode > 23 && e.xkey.keycode < 34)
+					|| (e.xkey.keycode > 37 && e.xkey.keycode < 48)
+					|| (e.xkey.keycode > 51 && e.xkey.keycode < 58)) { 	// lettre entre a et z
+			k = XKeycodeToKeysym(dpy,e.xkey.keycode,0);
+			strcat(str, XKeysymToString(k));
+			cairo_show_text(cr,  XKeysymToString(k));
+		}
+		else { 															// chiffres, '/', '.' ou supp 
+			switch(e.xkey.keycode) {
+				case 10: {
+					strcat(str, "1");
+					cairo_show_text(cr, "1");
+					break;
+				}
+				case 11: {
+					strcat(str, "2");
+					cairo_show_text(cr, "2");
+					break;
+				}
+				case 12:{
+					strcat(str, "3");
+					cairo_show_text(cr, "3");
+					break;
+				}
+				case 13: {
+					strcat(str, "4");
+					cairo_show_text(cr, "4");
+					break;
+				}
+				case 14: {
+					strcat(str, "5");
+					cairo_show_text(cr, "5");
+					break;
+				}
+				case 15: {
+					strcat(str, "6");
+					cairo_show_text(cr, "6");
+					break;
+				}
+				case 16: {
+					strcat(str, "7");
+					cairo_show_text(cr, "7");
+					break;
+				}
+				case 17: {
+					strcat(str, "8");
+					cairo_show_text(cr, "8");
+					break;	
+				}
+				case 18: {
+					strcat(str, "9");
+					cairo_show_text(cr, "9");
+					break;
+				}
+				case 19: {
+					strcat(str, "0");
+					cairo_show_text(cr, "0");
+					break;
+				}
+				case 59 : {
+					strcat(str, ".");
+					cairo_show_text(cr, ".");
+					break;					
+				}
+				case 60 : {
+					strcat(str, "/");
+					cairo_show_text(cr, "/");
+					break;					
+				}
+				case 22 : {
+					return nouvelle_grille_GUI(cs, dpy);
+				}
+				default:
+					break;
+			}
+		}
+	}
+	cairo_destroy(cr);
+	return str;
+}
+
+
 void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 	XEvent e;
-	char extension[] = EXTENSION;
 	int temps = TEMPS_INIT;
-	XNextEvent(dpy, &e);
+    while(1) {	
+		XNextEvent(dpy, &e);
+		fprintf(stdout, "%d\n", e.xbutton.button);
 
-    while(e.xbutton.button != Button3) {
-
-		if (e.xbutton.button == Button1) {
-			temps++;
-			evolue(g, gc);
-		} 
-		else if (e.xkey.keycode == 54) //54
-			toggle_compte_voisins_vivants();
-
-		else if (e.xkey.keycode == 55) 
-			toggle_vieillissement();
-
-		else if (e.xkey.keycode == 57) {        // 57 = n
-			char nomFichier[TAILLE_MAX];
-			char path[TAILLE_MAX] = PATH;
-
-			libere_grille(g);
-			libere_grille(gc);
-
-			printf("Veuillez saisir le nom d'une nouvelle grille : ");
-			scanf("%s", nomFichier);
-			while(getchar() != '\n'); 
-			strcat(strcat(path, nomFichier), extension);
-
-			temps = 0;
-			init_grille_from_file(path,g);
-			alloue_grille (g->nbl, g->nbc, gc);
-
-            cairo_xlib_surface_set_size(cs, SIZEX, SIZEY);		
+		if (e.type == ButtonPress) {
+			if (e.xbutton.button == Button1) {
+				temps++;
+				evolue(g, gc);
+			}
+			else if(e.xbutton.button == Button3)
+				break;
+		}
+		else if(e.type == KeyPress) {
+			switch(e.xkey.keycode) {
+				case 54:
+				{ // c
+					toggle_compte_voisins_vivants();
+					break;
+				}
+				case 55:
+				{ // v
+					toggle_vieillissement();
+					break;
+				}
+				case 57: 
+				{ // n
+					temps = TEMPS_INIT;
+					char * nom_grille;
+					libere_grille(g);
+					libere_grille(gc);
+					nom_grille = nouvelle_grille_GUI(cs, dpy);
+					init_grille_from_file(nom_grille,g);
+					alloue_grille (g->nbl, g->nbc, gc);
+				}
+				default:
+					break;
+			}
 		}
 		affiche_grille_GUI(*g, cs);
 		affiche_informations_GUI(cs, temps);
-		XNextEvent(dpy, &e);
-		//fprintf(stdout, "%d\n", e.xbutton.button); 
 	}
 }
 

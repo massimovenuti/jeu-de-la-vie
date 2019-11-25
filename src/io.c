@@ -83,7 +83,6 @@ void efface_grille (grille g){
 
 void debut_jeu(grille *g, grille *gc){
 	char c = getchar();
-	char extension[] = EXTENSION;
 	int temps = TEMPS_INIT;
 
 	while (c != 'q') // touche 'q' pour quitter
@@ -94,13 +93,11 @@ void debut_jeu(grille *g, grille *gc){
 				toggle_compte_voisins_vivants();
 				break;
 			}			
-				
 			case 'v' :
 			{ // touche "v" pour activer/désactiver le vieillissement
 				toggle_vieillissement();
 				break;
 			}
-
 			case '\n' : 
 			{ // touche "entree" pour évoluer
 				temps++;
@@ -109,29 +106,25 @@ void debut_jeu(grille *g, grille *gc){
 				affichage(g, temps);
 				break;
 			}
-
 			case 'n' : 
 			{ // touche "n" pour changer de grille
-				temps = 0;
-				char nomFichier[TAILLE_MAX];
-				char path[TAILLE_MAX] = PATH;
+				char chemin_grille[TAILLE_MAX];
+				temps = TEMPS_INIT;
 
 				efface_grille(*g);
 				libere_grille(g);
 				libere_grille(gc);
 
 				printf("Veuillez saisir le nom d'une nouvelle grille : ");
-				scanf("%s", nomFichier);
+				scanf("%s", chemin_grille);
 				while(getchar() != '\n'); 
-				strcat(strcat(path, nomFichier), extension);
 
-				init_grille_from_file(path,g);
+				init_grille_from_file(chemin_grille,g);
 				alloue_grille (g->nbl, g->nbc, gc);
 
 				affichage(g, temps);
 				break;
-			}
-			
+			}		
 			default : 
 			{ // touche non traitée
 				printf("\n\e[1A");

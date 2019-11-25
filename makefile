@@ -1,7 +1,7 @@
 CC = gcc -g
 CFLAGS = -W -Wall
 CPPFLAGS = -Iinclude -I/usr/include/cairo
-LDFLAGS = -lcairo -lm -lX11
+LDFLAGS = -lcairo -lm -lX11 
 
 OPATH = obj/
 BPATH = bin/

@@ -8,14 +8,18 @@
 #ifndef __IO_GUI_H__
 #define __IO_GUI_H__
 #define TAILLE_MAX 200
-#define PATH "grilles/"
-#define EXTENSION ".txt"
+
 #define SIZEX 1300
 #define SIZEY 650
-#define MARGE_HAUT 50
+
+#define MARGE_H 50
 #define MARGE_G 50
 #define MARGE_B 50
-#define MARGE_D 530
+#define MARGE_D 500
+
+#define INFO_X ((SIZEX - MARGE_D) + (MARGE_G))
+#define INFO_Y (MARGE_H + 40)
+#define INTERLIGNE 35
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,6 +27,7 @@
 #include <cairo.h>
 #include <cairo-xlib.h>
 #include <X11/Xlib.h>
+#include <X11/keysym.h>
 
 #include "grille.h"
 #include "jeu.h"
@@ -62,6 +67,7 @@ void affiche_informations_GUI(cairo_surface_t *cs, int temps);
  */
 void affichage_GUI (grille *g, grille *gc);
 
+char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy);
 
 /**
  * \fn void debut_jeu(grille *g, grille *gc)
