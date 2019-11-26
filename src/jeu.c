@@ -47,16 +47,6 @@ int compte_voisins_vivants_non_cyclique (int i, int j, grille g){
 }
 
 
-void vieillit(int i, int j, grille g) {
-	g.cellules[i][j]++;
-}
-
-
-int age_cellule(int i, int j, grille g) {
-	return g.cellules[i][j];
-}
-
-
 void toggle_compte_voisins_vivants() {
 	if (compte_voisins_vivants == compte_voisins_vivants_cyclique)
 		compte_voisins_vivants = &compte_voisins_vivants_non_cyclique;
@@ -67,6 +57,46 @@ void toggle_compte_voisins_vivants() {
 
 void toggle_vieillissement() {
 	vieillissement = !vieillissement;
+}
+
+
+int periode_oscillation_courante(grille g) {
+	grille gtmp, gctmp;
+	int periode;
+	alloue_grille(g.nbl, g.nbc, &gtmp);
+	alloue_grille(g.nbl, g.nbc, &gctmp);
+	copie_grille(g, gtmp);
+
+	if(grille_vide(g)) 
+		return -1;
+
+	for (periode = 0; periode < PERIODE_MAX; periode++) {
+		evolue(&gtmp, &gctmp);
+		if (sont_identiques(g,gtmp)) 
+			break;
+	}
+
+	libere_grille(&gtmp);
+	libere_grille(&gctmp);
+	return (periode == PERIODE_MAX) ? -1 : periode+1;
+}
+
+
+int periode_oscillation_delai(grille g) {
+	grille gtmp, gctmp;
+	int periode = -1;
+	alloue_grille(g.nbl, g.nbc, &gtmp);
+	alloue_grille(g.nbl, g.nbc, &gctmp);
+	copie_grille(g, gtmp);
+
+	for (int i = 0; i < PERIODE_MAX && periode == -1; i++) {
+		periode = periode_oscillation_courante(gtmp);
+		evolue(&gtmp, &gctmp);
+	}
+
+	libere_grille(&gtmp);
+	libere_grille(&gctmp);
+	return periode;
 }
 
 
@@ -93,5 +123,4 @@ void evolue (grille *g, grille *gc){
 			}
 		}
 	}
-	return;
 }

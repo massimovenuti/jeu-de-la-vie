@@ -11,6 +11,7 @@
 #include "grille.h"
 #define VIEILLISSEMENT_INIT 1
 #define TEMPS_INIT 1
+#define PERIODE_MAX 50
 
 /**
  * \fn static inline int modulo(int i, int m)
@@ -51,6 +52,10 @@ void toggle_compte_voisins_vivants();
 
 void toggle_vieillissement();
 
+
+int periode_oscillation_courante(grille g);
+
+int periode_oscillation_delai(grille g);
 
 /**
  * \fn void evolue (grille *g, grille *gc)

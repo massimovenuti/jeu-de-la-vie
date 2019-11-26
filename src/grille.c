@@ -69,3 +69,33 @@ void copie_grille (grille gs, grille gd){
 	return;	
 }
 
+
+int sont_identiques(grille g1, grille g2) {
+	int i,j;
+	int test = ((g1.nbl == g2.nbl) && (g1.nbc == g2.nbc)) ? 1 : 0;
+	
+	for (i = 0; i<g1.nbl && test != 0; i++) {
+		for (j = 0; j<g1.nbc; j++) {
+			if (est_vivante(i,j,g1) != est_vivante(i,j,g2)) {
+				test = 0;
+				break;
+			}
+		}
+	}
+	return test;
+}
+
+
+int grille_vide(grille g) {
+	int i,j;
+	int test = 1;
+	for (i = 0; i<g.nbl && test != 0; i++) {
+		for (j = 0; j<g.nbc; j++) {
+			if (est_vivante(i,j,g)) {
+				test = 0;
+				break;
+			}
+		}
+	}
+	return test;		
+}

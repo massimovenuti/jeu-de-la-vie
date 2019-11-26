@@ -1,17 +1,21 @@
 CC = gcc -g
 CFLAGS = -W -Wall
 CPPFLAGS = -Iinclude -I/usr/include/cairo
-LDFLAGS = -lcairo -lm -lX11 
+LDFLAGS =  -Llib -lcairo -lm -lX11 -ljeu
 
 OPATH = obj/
 BPATH = bin/
 DPATH = doc/
+LPATH = lib/
 vpath %.o obj
 vpath %.c src
 vpath %.h include
+vpath %.a lib
+
 vpath main bin
 
 OBJETS = $(OPATH)main.o $(OPATH)grille.o $(OPATH)jeu.o $(OPATH)io.o $(OPATH)io_gui.o
+LIB = $(LPATH)libjeu.a
 
 FCAIRO = 1
 
@@ -24,7 +28,7 @@ endif
 
 #-------------------------------------------------------------------------#
 
-main : main.o jeu.o io.o io_gui.o grille.o | $(BPATH)
+main : main.o jeu.o io.o io_gui.o grille.o libjeu.a | $(BPATH) 
 	$(CC) $(CFLAGS) -o $@ $(OBJETS) $(LDFLAGS)
 	mv $@ $(BPATH)
 
@@ -38,15 +42,24 @@ grille.o : grille.c grille.h
 	$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -DCAIRO=$(FCAIRO)
 	mv $@ $(OPATH)
 
+libjeu.a : grille.o jeu.o | $(LPATH)
+	ar -crv $@ obj/grille.o obj/jeu.o
+	ranlib $@
+	mv $@ lib/$@
+
+
 #-------------------------------------------------------------------------#
 
-$(BPATH) :
+$(BPATH):
 	mkdir $@
 
-$(DPATH) :
+$(DPATH):
 	mkdir $@
 
-$(OPATH) :
+$(OPATH):
+	mkdir $@
+
+$(LPATH):
 	mkdir $@
 
 #-------------------------------------------------------------------------#

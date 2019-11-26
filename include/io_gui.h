@@ -56,7 +56,7 @@ int taille_case_y(grille g);
  */
 void affiche_grille_GUI (grille g, cairo_surface_t *cs);
 
-void affiche_informations_GUI(cairo_surface_t *cs, int temps);
+void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode);
 
 
 /**
@@ -67,7 +67,9 @@ void affiche_informations_GUI(cairo_surface_t *cs, int temps);
  */
 void affichage_GUI (grille *g, grille *gc);
 
+
 char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy);
+
 
 /**
  * \fn void debut_jeu(grille *g, grille *gc)

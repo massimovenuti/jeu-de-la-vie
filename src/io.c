@@ -52,24 +52,25 @@ void affiche_temps(int temps) {
 }
 
 
+void affiche_oscillation(int periode) {
+	(periode > 0) ? printf("Période : %d\n", periode) : printf("Période : 0\n");
+}
+
+
 void affiche_vieillissement() {
-	if (vieillissement)
-		printf("Vieillissement : activé");
-	else 
-		printf("Vieillissement : désactivé");
+	(vieillissement)? printf("Vieillissement : ON")	: printf("Vieillissement : OFF");
 }
 
 
 void affiche_calcul_voisinage() {
-	if (compte_voisins_vivants == compte_voisins_vivants_cyclique) 
-		printf("Voisinage cyclique : activé\n");
-	else 
-		printf("Voisinage cyclique : désactivé\n");
+	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? 
+		printf("Voisinage cyclique : ON\n") : printf("Voisinage cyclique : OFF\n");
 }
 
 
-void affichage(grille *g, int temps) {
+void affichage(grille *g, int temps, int periode) {
 	affiche_temps(temps);
+	affiche_oscillation(periode);
 	affiche_calcul_voisinage();
 	affiche_vieillissement();
 	affiche_grille(*g);
@@ -77,13 +78,14 @@ void affichage(grille *g, int temps) {
 
 
 void efface_grille (grille g){
-    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 7);
+    printf("\n\x1b[%dA\x1b[J",g.nbl*2 + 8);
 }
 
 
 void debut_jeu(grille *g, grille *gc){
 	char c = getchar();
 	int temps = TEMPS_INIT;
+	int periode = PERIODE_INIT;
 
 	while (c != 'q') // touche 'q' pour quitter
 	{
@@ -103,13 +105,14 @@ void debut_jeu(grille *g, grille *gc){
 				temps++;
 				evolue(g,gc);
 				efface_grille(*g);
-				affichage(g, temps);
+				affichage(g, temps, periode);
 				break;
 			}
 			case 'n' : 
 			{ // touche "n" pour changer de grille
 				char chemin_grille[TAILLE_MAX];
 				temps = TEMPS_INIT;
+				periode = 0;
 
 				efface_grille(*g);
 				libere_grille(g);
@@ -121,8 +124,12 @@ void debut_jeu(grille *g, grille *gc){
 
 				init_grille_from_file(chemin_grille,g);
 				alloue_grille (g->nbl, g->nbc, gc);
-
-				affichage(g, temps);
+				affichage(g, temps, periode);
+				break;
+			}
+			case 'o':
+			{
+				periode = periode_oscillation_delai(*g);
 				break;
 			}		
 			default : 

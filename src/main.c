@@ -44,7 +44,7 @@ int main (int argc, char ** argv) {
 	if (CAIRO)
 		affichage_GUI(&g, &gc);
 	else {
-		affichage(&g, TEMPS_INIT);
+		affichage(&g, TEMPS_INIT, PERIODE_INIT);
 		debut_jeu(&g, &gc);
 	}
 

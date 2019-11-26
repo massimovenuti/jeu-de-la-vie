@@ -14,6 +14,7 @@
 #include "jeu.h"
 
 #define TAILLE_MAX 200
+#define PERIODE_INIT -1
 #define PATH "grilles/"
 #define EXTENSION ".txt"
 
@@ -84,6 +85,9 @@ void debut_jeu(grille *g, grille *gc);
 void affiche_temps(int temps);
 
 
+void affiche_oscillation(int periode);
+
+
 /**
  * \fn void affiche_vieillissement()
  * \brief Fonction d'affichage de l'état du vieillissement des cellules (activé ou non).
@@ -105,7 +109,7 @@ void affiche_calcul_voisinage();
  * \param g Adresse de la grille en jeu.
  * \param temps Entier : temps d'évolution.
  */
-void affichage(grille *g, int temps);
+void affichage(grille *g, int temps, int periode);
 
 
 #endif

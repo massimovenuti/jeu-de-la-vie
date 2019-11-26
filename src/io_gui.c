@@ -63,8 +63,10 @@ void affiche_grille_GUI(grille g, cairo_surface_t *cs) {
 }
 
 
-void affiche_informations_GUI(cairo_surface_t *cs, int temps) {
+void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode) {
 	char str[10];
+	char str_tps[20] = "Temps : ";
+	char str_osc[20] = "Période : ";
 	cairo_t *cr;
 	cr=cairo_create(cs);	
 
@@ -91,21 +93,33 @@ void affiche_informations_GUI(cairo_surface_t *cs, int temps) {
 	cairo_show_text(cr, "- c : activer/désactiver bords cyclique");
 	cairo_move_to(cr, INFO_X, INFO_Y+9*INTERLIGNE);
 	cairo_show_text(cr, "- v : activer/désactiver vieillissement");
+	cairo_move_to(cr, INFO_X, INFO_Y+10*INTERLIGNE);
+	cairo_show_text(cr, "- o : calcul période d'oscillation");
 
 	// Temps
 	cairo_set_font_size(cr, 20);
 	cairo_set_source_rgb(cr, 1., 0.6, 0.3);
 	cairo_move_to(cr, INFO_X, INFO_Y + 13*INTERLIGNE);
 	sprintf(str, "%d", temps);
-	cairo_show_text(cr, str);
+	strcat(str_tps, str);
+	cairo_show_text(cr, str_tps);
+	
+	// Voisinage
+	cairo_move_to(cr, INFO_X, INFO_Y + 14*INTERLIGNE);
+	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? cairo_show_text(cr, "Cyclique : ON") : cairo_show_text(cr, "Cyclique : OFF");
 
 	// Vieillissement
 	cairo_move_to(cr, INFO_X + 5 * INTERLIGNE, INFO_Y + 14*INTERLIGNE);
 	(vieillissement) ? cairo_show_text(cr, "Vieillissement : ON") : cairo_show_text(cr, "Vieillissement : OFF");
 
-	// Voisinage
-	cairo_move_to(cr, INFO_X, INFO_Y + 14*INTERLIGNE);
-	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? cairo_show_text(cr, "Cyclique : ON") : cairo_show_text(cr, "Cyclique : OFF");	
+	// Oscillation
+	cairo_move_to(cr, INFO_X + 5 * INTERLIGNE, INFO_Y + 13*INTERLIGNE);
+	cairo_set_source_rgb(cr, 1, 0, 0);
+	if (periode > 0) {
+		sprintf(str, "%d", periode);
+		strcat(str_osc, str);
+		cairo_show_text(cr, str_osc);
+	}
 
 	cairo_destroy(cr);
 }
@@ -131,7 +145,7 @@ char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy) {
 	cairo_show_text(cr, "Nouvelle grille");
 
 	// Zone de texte
-	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 4 *INTERLIGNE , MARGE_D - 2 *MARGE_G, INTERLIGNE+5);
+	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 4 *INTERLIGNE + 5 , MARGE_D - 2 *MARGE_G, INTERLIGNE+5);
 	cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
 	cairo_fill(cr);
 
@@ -232,6 +246,7 @@ char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy) {
 void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 	XEvent e;
 	int temps = TEMPS_INIT;
+	int periode = -1;
     while(1) {	
 		XNextEvent(dpy, &e);
 		fprintf(stdout, "%d\n", e.xbutton.button);
@@ -259,19 +274,28 @@ void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 				case 57: 
 				{ // n
 					temps = TEMPS_INIT;
-					char * nom_grille;
+					periode = -1;
+					char * chemin_grille;
 					libere_grille(g);
 					libere_grille(gc);
-					nom_grille = nouvelle_grille_GUI(cs, dpy);
-					init_grille_from_file(nom_grille,g);
+					chemin_grille = nouvelle_grille_GUI(cs, dpy);
+					init_grille_from_file(chemin_grille,g);
 					alloue_grille (g->nbl, g->nbc, gc);
+					break;
+				}
+				case 32:
+				{ // o
+					periode = periode_oscillation_delai(*g);
+					break;
 				}
 				default:
+				{
 					break;
+				}
 			}
 		}
 		affiche_grille_GUI(*g, cs);
-		affiche_informations_GUI(cs, temps);
+		affiche_informations_GUI(cs, temps, periode);
 	}
 }
 

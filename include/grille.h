@@ -90,7 +90,14 @@ static inline void set_nonViable(int i, int j, grille g){g.cellules[i][j] = -1;}
  */
 static inline int est_vivante(int i, int j, grille g) {return g.cellules[i][j] > 0;}
 
+
 static inline int est_viable(int i, int j, grille g) {return g.cellules[i][j] != -1;}
+
+
+static inline int age_cellule(int i, int j, grille g) {return g.cellules[i][j];}
+
+
+static inline void vieillit(int i, int j, grille g) {g.cellules[i][j]++;}
 
 
 /**
@@ -101,5 +108,11 @@ static inline int est_viable(int i, int j, grille g) {return g.cellules[i][j] !=
  * \param gd Grille : grille à modifier (destination).
  */
 void copie_grille (grille gs, grille gd);
+
+
+int sont_identiques(grille g1, grille g2);
+
+
+int grille_vide(grille g);
 
 #endif
