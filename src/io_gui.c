@@ -165,6 +165,7 @@ void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 					libere_grille(g);
 					libere_grille(gc);
 					temps = 0;
+					periode=0;
 
 					printf("Veuillez saisir le nom d'une nouvelle grille : ");
 					scanf("%s", chemin_grille);
