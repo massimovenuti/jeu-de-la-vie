@@ -1,0 +1,243 @@
+\hypertarget{io__gui_8h}{}\section{Référence du fichier include/io\+\_\+gui.h}
+\label{io__gui_8h}\index{include/io\+\_\+gui.\+h@{include/io\+\_\+gui.\+h}}
+
+
+Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{io__gui_8c}{io\+\_\+gui.\+c}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$cairo.\+h$>$}\newline
+{\ttfamily \#include $<$cairo-\/xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/keysym.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}grille.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de io\+\_\+gui.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{io__gui_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{io__gui_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{io__gui_8h_ae6ad0540d5109a0200f0dde5dc5b4bf6}\label{io__gui_8h_ae6ad0540d5109a0200f0dde5dc5b4bf6}} 
+\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+M\+AX}~200
+\item 
+\mbox{\Hypertarget{io__gui_8h_a3d6d12a6ee0d7d77f3f180ed1b2a1e22}\label{io__gui_8h_a3d6d12a6ee0d7d77f3f180ed1b2a1e22}} 
+\#define {\bfseries S\+I\+Z\+EX}~1300
+\item 
+\mbox{\Hypertarget{io__gui_8h_a7e1991fcd344daa8c9e423cfd3481a8c}\label{io__gui_8h_a7e1991fcd344daa8c9e423cfd3481a8c}} 
+\#define {\bfseries S\+I\+Z\+EY}~650
+\item 
+\mbox{\Hypertarget{io__gui_8h_aa3c73dd0ff466e1940408862133f62fa}\label{io__gui_8h_aa3c73dd0ff466e1940408862133f62fa}} 
+\#define {\bfseries M\+A\+R\+G\+E\+\_\+H}~50
+\item 
+\mbox{\Hypertarget{io__gui_8h_aff16108c137b184e5606f5b7fdf6e583}\label{io__gui_8h_aff16108c137b184e5606f5b7fdf6e583}} 
+\#define {\bfseries M\+A\+R\+G\+E\+\_\+G}~50
+\item 
+\mbox{\Hypertarget{io__gui_8h_a1669fd2d4c280986411090bcc982f10f}\label{io__gui_8h_a1669fd2d4c280986411090bcc982f10f}} 
+\#define {\bfseries M\+A\+R\+G\+E\+\_\+B}~50
+\item 
+\mbox{\Hypertarget{io__gui_8h_a79e2fec2ceb3871d6e84dd65af48ac5f}\label{io__gui_8h_a79e2fec2ceb3871d6e84dd65af48ac5f}} 
+\#define {\bfseries M\+A\+R\+G\+E\+\_\+D}~500
+\item 
+\mbox{\Hypertarget{io__gui_8h_a741dafa1bd1ea79378f402bb15fbeeca}\label{io__gui_8h_a741dafa1bd1ea79378f402bb15fbeeca}} 
+\#define {\bfseries I\+N\+F\+O\+\_\+X}~((S\+I\+Z\+EX -\/ M\+A\+R\+G\+E\+\_\+D) + (M\+A\+R\+G\+E\+\_\+G))
+\item 
+\mbox{\Hypertarget{io__gui_8h_a89904cb639d01dbee42b37befc20650c}\label{io__gui_8h_a89904cb639d01dbee42b37befc20650c}} 
+\#define {\bfseries I\+N\+F\+O\+\_\+Y}~(M\+A\+R\+G\+E\+\_\+H + 40)
+\item 
+\mbox{\Hypertarget{io__gui_8h_a58863edab508861257f7d291470ebb02}\label{io__gui_8h_a58863edab508861257f7d291470ebb02}} 
+\#define {\bfseries I\+N\+T\+E\+R\+L\+I\+G\+NE}~35
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{io__gui_8h_a135dfea37a59c98fd2e5a09fb676a7be}{taille\+\_\+case\+\_\+x} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant la taile des cases d\textquotesingle{}une grille selon x pour s\textquotesingle{}adapter à l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+int \hyperlink{io__gui_8h_a317c9950bbdbbec355b3c3955b424524}{taille\+\_\+case\+\_\+y} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant la taile des cases d\textquotesingle{}une grille selon y pour s\textquotesingle{}adapter à l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \hyperlink{io__gui_8h_a16d2460f736e1e464f0552fb2b42d261}{affiche\+\_\+grille\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} g, cairo\+\_\+surface\+\_\+t $\ast$cs)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille en mode Graphique. \end{DoxyCompactList}\item 
+void \hyperlink{io__gui_8h_a5ef23b7150cddd403d7e6c054f96641b}{affiche\+\_\+informations\+\_\+\+G\+UI} (cairo\+\_\+surface\+\_\+t $\ast$cs, int temps, int periode)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique. \end{DoxyCompactList}\item 
+void \hyperlink{io__gui_8h_a857c58c21a4f35a085d947be2c9df3e6}{affichage\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une partie en mode Graphique. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}{nouvelle\+\_\+grille\+\_\+\+G\+UI} (cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
+\begin{DoxyCompactList}\small\item\em Fonction de gestion de nouvelles grilles en mode Graphique. \end{DoxyCompactList}\item 
+void \hyperlink{io__gui_8h_a4618a45e955285f24342422772e00408}{debut\+\_\+jeu\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc, cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
+\begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu en mode Graphique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}\label{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}} 
+int($\ast$ \hyperlink{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}{compte\+\_\+voisins\+\_\+vivants} )(int, int, \hyperlink{structgrille}{grille})
+\begin{DoxyCompactList}\small\item\em Pointeur de fonction contenant l\textquotesingle{}adresse de la fonction de calcul du voisinage d\textquotesingle{}une cellule. \end{DoxyCompactList}\item 
+int \hyperlink{io__gui_8h_a852233e3ec97f7c44944c67998337e26}{vieillissement}
+\begin{DoxyCompactList}\small\item\em Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{io__gui_8c}{io\+\_\+gui.\+c}. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti 
+\end{DoxyAuthor}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{io__gui_8h_a857c58c21a4f35a085d947be2c9df3e6}\label{io__gui_8h_a857c58c21a4f35a085d947be2c9df3e6}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!affichage\+\_\+\+G\+UI@{affichage\+\_\+\+G\+UI}}
+\index{affichage\+\_\+\+G\+UI@{affichage\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{affichage\+\_\+\+G\+U\+I()}{affichage\_GUI()}}
+{\footnotesize\ttfamily void affichage\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une partie en mode Graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io__gui_8h_a16d2460f736e1e464f0552fb2b42d261}\label{io__gui_8h_a16d2460f736e1e464f0552fb2b42d261}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!affiche\+\_\+grille\+\_\+\+G\+UI@{affiche\+\_\+grille\+\_\+\+G\+UI}}
+\index{affiche\+\_\+grille\+\_\+\+G\+UI@{affiche\+\_\+grille\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{affiche\+\_\+grille\+\_\+\+G\+U\+I()}{affiche\_grille\_GUI()}}
+{\footnotesize\ttfamily void affiche\+\_\+grille\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g,  }\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille en mode Graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à afficher. \\
+\hline
+{\em cs} & Adresse de la surface cairo courante. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io__gui_8h_a5ef23b7150cddd403d7e6c054f96641b}\label{io__gui_8h_a5ef23b7150cddd403d7e6c054f96641b}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!affiche\+\_\+informations\+\_\+\+G\+UI@{affiche\+\_\+informations\+\_\+\+G\+UI}}
+\index{affiche\+\_\+informations\+\_\+\+G\+UI@{affiche\+\_\+informations\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{affiche\+\_\+informations\+\_\+\+G\+U\+I()}{affiche\_informations\_GUI()}}
+{\footnotesize\ttfamily void affiche\+\_\+informations\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs,  }\item[{int}]{temps,  }\item[{int}]{periode }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cs} & Adresse de la surface cairo courante. \\
+\hline
+{\em temps} & Entier \+: temps d\textquotesingle{}évolution courant. \\
+\hline
+{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille g. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io__gui_8h_a4618a45e955285f24342422772e00408}\label{io__gui_8h_a4618a45e955285f24342422772e00408}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!debut\+\_\+jeu\+\_\+\+G\+UI@{debut\+\_\+jeu\+\_\+\+G\+UI}}
+\index{debut\+\_\+jeu\+\_\+\+G\+UI@{debut\+\_\+jeu\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{debut\+\_\+jeu\+\_\+\+G\+U\+I()}{debut\_jeu\_GUI()}}
+{\footnotesize\ttfamily void debut\+\_\+jeu\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc,  }\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs,  }\item[{Display $\ast$}]{dpy }\end{DoxyParamCaption})}
+
+
+
+Fonction pour débuter le jeu en mode Graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+{\em cs} & Adresse de la surface cairo courante. \\
+\hline
+{\em dpy} & Adresse du display courant. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}\label{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}}
+\index{nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{nouvelle\+\_\+grille\+\_\+\+G\+U\+I()}{nouvelle\_grille\_GUI()}}
+{\footnotesize\ttfamily char$\ast$ nouvelle\+\_\+grille\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs,  }\item[{Display $\ast$}]{dpy }\end{DoxyParamCaption})}
+
+
+
+Fonction de gestion de nouvelles grilles en mode Graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dpy} & Adresse du display courant. \\
+\hline
+{\em cs} & Adresse de la surface cairo courante. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Chaîne de caractères \+: chemin vers une nouvelle grille entré par l\textquotesingle{}utilisateur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__gui_8h_a135dfea37a59c98fd2e5a09fb676a7be}\label{io__gui_8h_a135dfea37a59c98fd2e5a09fb676a7be}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}}
+\index{taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{taille\+\_\+case\+\_\+x()}{taille\_case\_x()}}
+{\footnotesize\ttfamily int taille\+\_\+case\+\_\+x (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant la taile des cases d\textquotesingle{}une grille selon x pour s\textquotesingle{}adapter à l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: taille selon x des cases de la grille g. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io__gui_8h_a317c9950bbdbbec355b3c3955b424524}\label{io__gui_8h_a317c9950bbdbbec355b3c3955b424524}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!taille\+\_\+case\+\_\+y@{taille\+\_\+case\+\_\+y}}
+\index{taille\+\_\+case\+\_\+y@{taille\+\_\+case\+\_\+y}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{taille\+\_\+case\+\_\+y()}{taille\_case\_y()}}
+{\footnotesize\ttfamily int taille\+\_\+case\+\_\+y (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant la taile des cases d\textquotesingle{}une grille selon y pour s\textquotesingle{}adapter à l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: taille selon y des cases de la grille g. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des variables}
+\mbox{\Hypertarget{io__gui_8h_a852233e3ec97f7c44944c67998337e26}\label{io__gui_8h_a852233e3ec97f7c44944c67998337e26}} 
+\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!vieillissement@{vieillissement}}
+\index{vieillissement@{vieillissement}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
+\subsubsection{\texorpdfstring{vieillissement}{vieillissement}}
+{\footnotesize\ttfamily int vieillissement}
+
+
+
+Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. 
+
+Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. 

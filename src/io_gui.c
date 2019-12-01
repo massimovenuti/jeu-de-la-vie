@@ -106,11 +106,13 @@ void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode) {
 	
 	// Voisinage
 	cairo_move_to(cr, INFO_X, INFO_Y + 14*INTERLIGNE);
-	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? cairo_show_text(cr, "Cyclique : ON") : cairo_show_text(cr, "Cyclique : OFF");
+	cairo_show_text(cr, "Cyclique : ");
+	(compte_voisins_vivants == compte_voisins_vivants_cyclique) ? cairo_show_text(cr, "ON") : cairo_show_text(cr, "OFF");
 
 	// Vieillissement
 	cairo_move_to(cr, INFO_X + 5 * INTERLIGNE, INFO_Y + 14*INTERLIGNE);
-	(vieillissement) ? cairo_show_text(cr, "Vieillissement : ON") : cairo_show_text(cr, "Vieillissement : OFF");
+	cairo_show_text(cr, "Vieillissement : ");
+	(vieillissement) ? cairo_show_text(cr, "ON") : cairo_show_text(cr, "OFF");
 
 	// Oscillation
 	cairo_move_to(cr, INFO_X + 5 * INTERLIGNE, INFO_Y + 13*INTERLIGNE);
@@ -120,126 +122,8 @@ void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode) {
 		strcat(str_osc, str);
 		cairo_show_text(cr, str_osc);
 	}
-
+	
 	cairo_destroy(cr);
-}
-
-
-char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy) {
-	cairo_t *cr;
-	cr=cairo_create(cs);
-	XEvent e;
-	KeySym k;
-	char* str = malloc(TAILLE_MAX*sizeof(char));
-	strcpy(str, "");
-
-	// Fond 2
-	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H , MARGE_D - MARGE_G, SIZEY - MARGE_H);
-	cairo_set_source_rgb(cr, .12, 0.12, 0.12);
-	cairo_fill(cr);		
-
-	// Titre "Nouvelle grille"
-	cairo_set_font_size(cr, 30);
-	cairo_set_source_rgb(cr, 1.0, 0.6, 0.3);
-	cairo_move_to(cr, INFO_X, INFO_Y + 3 * INTERLIGNE);
-	cairo_show_text(cr, "Nouvelle grille");
-
-	// Zone de texte
-	cairo_rectangle(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 4 *INTERLIGNE + 5 , MARGE_D - 2 *MARGE_G, INTERLIGNE+5);
-	cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-	cairo_fill(cr);
-
-	// Saisie de la nouvelle grille
-	cairo_move_to(cr, SIZEX - MARGE_D + MARGE_G, 2 * MARGE_H + 5 *INTERLIGNE);
-	cairo_set_source_rgb(cr, 0, 0, 0);
-	cairo_set_font_size(cr, 25);
-	while(1) {
-		XNextEvent(dpy, &e);
-		if(e.xkey.keycode == 36) { 										// '\n'
-			break;
-		}
-		else if(e.xbutton.button == Button3) {							// clic-droit
-			break;
-		}
-		else if ((e.xkey.keycode > 23 && e.xkey.keycode < 34)
-					|| (e.xkey.keycode > 37 && e.xkey.keycode < 48)
-					|| (e.xkey.keycode > 51 && e.xkey.keycode < 58)) { 	// lettre entre a et z
-			k = XKeycodeToKeysym(dpy,e.xkey.keycode,0);
-			strcat(str, XKeysymToString(k));
-			cairo_show_text(cr,  XKeysymToString(k));
-		}
-		else { 															// chiffres, '/', '.' ou supp 
-			switch(e.xkey.keycode) {
-				case 10: {
-					strcat(str, "1");
-					cairo_show_text(cr, "1");
-					break;
-				}
-				case 11: {
-					strcat(str, "2");
-					cairo_show_text(cr, "2");
-					break;
-				}
-				case 12:{
-					strcat(str, "3");
-					cairo_show_text(cr, "3");
-					break;
-				}
-				case 13: {
-					strcat(str, "4");
-					cairo_show_text(cr, "4");
-					break;
-				}
-				case 14: {
-					strcat(str, "5");
-					cairo_show_text(cr, "5");
-					break;
-				}
-				case 15: {
-					strcat(str, "6");
-					cairo_show_text(cr, "6");
-					break;
-				}
-				case 16: {
-					strcat(str, "7");
-					cairo_show_text(cr, "7");
-					break;
-				}
-				case 17: {
-					strcat(str, "8");
-					cairo_show_text(cr, "8");
-					break;	
-				}
-				case 18: {
-					strcat(str, "9");
-					cairo_show_text(cr, "9");
-					break;
-				}
-				case 19: {
-					strcat(str, "0");
-					cairo_show_text(cr, "0");
-					break;
-				}
-				case 59 : {
-					strcat(str, ".");
-					cairo_show_text(cr, ".");
-					break;					
-				}
-				case 60 : {
-					strcat(str, "/");
-					cairo_show_text(cr, "/");
-					break;					
-				}
-				case 22 : {
-					return nouvelle_grille_GUI(cs, dpy);
-				}
-				default:
-					break;
-			}
-		}
-	}
-	cairo_destroy(cr);
-	return str;
 }
 
 
@@ -249,8 +133,7 @@ void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 	int periode = -1;
     while(1) {	
 		XNextEvent(dpy, &e);
-		fprintf(stdout, "%d\n", e.xbutton.button);
-
+		//fprintf(stdout, "%d\n", e.xbutton.button);
 		if (e.type == ButtonPress) {
 			if (e.xbutton.button == Button1) {
 				temps++;
@@ -271,27 +154,28 @@ void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy) {
 					toggle_vieillissement();
 					break;
 				}
-				case 57: 
-				{ // n
-					temps = TEMPS_INIT;
-					periode = -1;
-					char * chemin_grille;
-					libere_grille(g);
-					libere_grille(gc);
-					chemin_grille = nouvelle_grille_GUI(cs, dpy);
-					init_grille_from_file(chemin_grille,g);
-					alloue_grille (g->nbl, g->nbc, gc);
-					break;
-				}
 				case 32:
 				{ // o
 					periode = periode_oscillation_delai(*g);
 					break;
 				}
-				default:
-				{
+				case 57: 
+				{ // n
+					char chemin_grille[TAILLE_MAX];
+					libere_grille(g);
+					libere_grille(gc);
+					temps = 0;
+
+					printf("Veuillez saisir le nom d'une nouvelle grille : ");
+					scanf("%s", chemin_grille);
+					while(getchar() != '\n'); 
+
+					init_grille_from_file(chemin_grille,g);
+					alloue_grille (g->nbl, g->nbc, gc);
 					break;
 				}
+				default:
+					break;
 			}
 		}
 		affiche_grille_GUI(*g, cs);

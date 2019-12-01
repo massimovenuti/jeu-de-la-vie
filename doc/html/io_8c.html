@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la Vie: Référence du fichier src/io.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la Vie
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier io.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestion des entrées/sorties du jeu de la vie en mode Texte.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="io_8h_source.html">io.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de io.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="io_8c__incl.png" border="0" usemap="#src_2io_8c" alt=""/></div>
+<map name="src_2io_8c" id="src_2io_8c">
+<area shape="rect" id="node2" href="io_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io.c. " alt="" coords="105,80,148,107"/>
+<area shape="rect" id="node5" href="grille_8h.html" title="Fichier d&#39;en&#45;tête du fichier source grille.c. " alt="" coords="133,229,193,256"/>
+<area shape="rect" id="node8" href="jeu_8h.html" title="Fichier d&#39;en&#45;tête du fichier source jeu.c. " alt="" coords="200,155,251,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a634cf584c380ce221d5d4199f3e813bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a634cf584c380ce221d5d4199f3e813bd">affiche_trait</a> (int c)</td></tr>
+<tr class="memdesc:a634cf584c380ce221d5d4199f3e813bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'un trait horizontal en mode Texte.  <a href="#a634cf584c380ce221d5d4199f3e813bd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a634cf584c380ce221d5d4199f3e813bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3ff78e56fcf21a932ff73b70635554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a3f3ff78e56fcf21a932ff73b70635554">affiche_ligne</a> (int c, int *ligne)</td></tr>
+<tr class="memdesc:a3f3ff78e56fcf21a932ff73b70635554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'une ligne de la grille en mode Texte.  <a href="#a3f3ff78e56fcf21a932ff73b70635554">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3f3ff78e56fcf21a932ff73b70635554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90cb8ec05374b46d9995705ed4954f34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a90cb8ec05374b46d9995705ed4954f34">affiche_grille</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a90cb8ec05374b46d9995705ed4954f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'une grille en mode Texte.  <a href="#a90cb8ec05374b46d9995705ed4954f34">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a90cb8ec05374b46d9995705ed4954f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec97c7f0ca09173b533e29ff31bd286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#afec97c7f0ca09173b533e29ff31bd286">affiche_temps</a> (int temps)</td></tr>
+<tr class="memdesc:afec97c7f0ca09173b533e29ff31bd286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage du temps d'évolution courant en mode Texte.  <a href="#afec97c7f0ca09173b533e29ff31bd286">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afec97c7f0ca09173b533e29ff31bd286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cca3b39e4f5e70fac85ea3d96690a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a92cca3b39e4f5e70fac85ea3d96690a5">affiche_oscillation</a> (int periode)</td></tr>
+<tr class="memdesc:a92cca3b39e4f5e70fac85ea3d96690a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de la période d'évolution d'une grille en mode Texte.  <a href="#a92cca3b39e4f5e70fac85ea3d96690a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a92cca3b39e4f5e70fac85ea3d96690a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0811ccbaa0cf73f604b98cd760adbc91"><td class="memItemLeft" align="right" valign="top"><a id="a0811ccbaa0cf73f604b98cd760adbc91"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a0811ccbaa0cf73f604b98cd760adbc91">affiche_vieillissement</a> ()</td></tr>
+<tr class="memdesc:a0811ccbaa0cf73f604b98cd760adbc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de l'état du vieillissement (ON/OFF) en mode Texte. <br /></td></tr>
+<tr class="separator:a0811ccbaa0cf73f604b98cd760adbc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49ae01960af6777be7df4da33fff6fc"><td class="memItemLeft" align="right" valign="top"><a id="aa49ae01960af6777be7df4da33fff6fc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#aa49ae01960af6777be7df4da33fff6fc">affiche_calcul_voisinage</a> ()</td></tr>
+<tr class="memdesc:aa49ae01960af6777be7df4da33fff6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de l'état du voisinage cyclique (ON/OFF) en mode Texte. <br /></td></tr>
+<tr class="separator:aa49ae01960af6777be7df4da33fff6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352250d421c748fcda925bd74a390361"><td class="memItemLeft" align="right" valign="top"><a id="a352250d421c748fcda925bd74a390361"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>affichage</b> (<a class="el" href="structgrille.html">grille</a> *g, int temps, int periode)</td></tr>
+<tr class="separator:a352250d421c748fcda925bd74a390361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36a6f8957cd3e682119007836ce6ad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#ab36a6f8957cd3e682119007836ce6ad5">efface_grille</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:ab36a6f8957cd3e682119007836ce6ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'effacement d'une grille en mode Texte.  <a href="#ab36a6f8957cd3e682119007836ce6ad5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab36a6f8957cd3e682119007836ce6ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88493b3c55828670e47150a95ed7db5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_8c.html#a88493b3c55828670e47150a95ed7db5b">debut_jeu</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
+<tr class="memdesc:a88493b3c55828670e47150a95ed7db5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour débuter le jeu en mode Texte.  <a href="#a88493b3c55828670e47150a95ed7db5b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a88493b3c55828670e47150a95ed7db5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gestion des entrées/sorties du jeu de la vie en mode Texte. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Massimo Venuti</dd></dl>
+<p>Affichage des grilles et des informations du jeu de la vie. Gestion des saisies du joueur. </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a90cb8ec05374b46d9995705ed4954f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90cb8ec05374b46d9995705ed4954f34">&#9670;&nbsp;</a></span>affiche_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage d'une grille en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f3ff78e56fcf21a932ff73b70635554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3ff78e56fcf21a932ff73b70635554">&#9670;&nbsp;</a></span>affiche_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_ligne </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ligne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage d'une ligne de la grille en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Entier : nombre de colonnes de la grille. </td></tr>
+    <tr><td class="paramname">ligne</td><td>Tableau d'entiers : ligne de la grille. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92cca3b39e4f5e70fac85ea3d96690a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92cca3b39e4f5e70fac85ea3d96690a5">&#9670;&nbsp;</a></span>affiche_oscillation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_oscillation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>periode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage de la période d'évolution d'une grille en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille courante. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afec97c7f0ca09173b533e29ff31bd286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec97c7f0ca09173b533e29ff31bd286">&#9670;&nbsp;</a></span>affiche_temps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_temps </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>temps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage du temps d'évolution courant en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temps</td><td>Entier : temps d'évolution courant. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a634cf584c380ce221d5d4199f3e813bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634cf584c380ce221d5d4199f3e813bd">&#9670;&nbsp;</a></span>affiche_trait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_trait </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage d'un trait horizontal en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Entier : nombre de colonnes de la grille. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a88493b3c55828670e47150a95ed7db5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88493b3c55828670e47150a95ed7db5b">&#9670;&nbsp;</a></span>debut_jeu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void debut_jeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction pour débuter le jeu en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>Adresse de la grille servant de copie temporaire pour le programme. </td></tr>
+    <tr><td class="paramname">g</td><td>Adresse de la grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab36a6f8957cd3e682119007836ce6ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36a6f8957cd3e682119007836ce6ad5">&#9670;&nbsp;</a></span>efface_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void efface_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'effacement d'une grille en mode Texte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille à effacer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

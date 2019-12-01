@@ -1,0 +1,161 @@
+\hypertarget{io_8c}{}\section{Référence du fichier src/io.c}
+\label{io_8c}\index{src/io.\+c@{src/io.\+c}}
+
+
+Gestion des entrées/sorties du jeu de la vie en mode Texte.  
+
+
+{\ttfamily \#include \char`\"{}io.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de io.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{io_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{io_8c_a634cf584c380ce221d5d4199f3e813bd}{affiche\+\_\+trait} (int c)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}un trait horizontal en mode Texte. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_a3f3ff78e56fcf21a932ff73b70635554}{affiche\+\_\+ligne} (int c, int $\ast$ligne)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille en mode Texte. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_a90cb8ec05374b46d9995705ed4954f34}{affiche\+\_\+grille} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille en mode Texte. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_afec97c7f0ca09173b533e29ff31bd286}{affiche\+\_\+temps} (int temps)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage du temps d\textquotesingle{}évolution courant en mode Texte. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_a92cca3b39e4f5e70fac85ea3d96690a5}{affiche\+\_\+oscillation} (int periode)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de la période d\textquotesingle{}évolution d\textquotesingle{}une grille en mode Texte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}\label{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}} 
+void \hyperlink{io_8c_a0811ccbaa0cf73f604b98cd760adbc91}{affiche\+\_\+vieillissement} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de l\textquotesingle{}état du vieillissement (O\+N/\+O\+FF) en mode Texte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io_8c_aa49ae01960af6777be7df4da33fff6fc}\label{io_8c_aa49ae01960af6777be7df4da33fff6fc}} 
+void \hyperlink{io_8c_aa49ae01960af6777be7df4da33fff6fc}{affiche\+\_\+calcul\+\_\+voisinage} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de l\textquotesingle{}état du voisinage cyclique (O\+N/\+O\+FF) en mode Texte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io_8c_a352250d421c748fcda925bd74a390361}\label{io_8c_a352250d421c748fcda925bd74a390361}} 
+void {\bfseries affichage} (\hyperlink{structgrille}{grille} $\ast$g, int temps, int periode)
+\item 
+void \hyperlink{io_8c_ab36a6f8957cd3e682119007836ce6ad5}{efface\+\_\+grille} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}effacement d\textquotesingle{}une grille en mode Texte. \end{DoxyCompactList}\item 
+void \hyperlink{io_8c_a88493b3c55828670e47150a95ed7db5b}{debut\+\_\+jeu} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
+\begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu en mode Texte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion des entrées/sorties du jeu de la vie en mode Texte. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti
+\end{DoxyAuthor}
+Affichage des grilles et des informations du jeu de la vie. Gestion des saisies du joueur. 
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{io_8c_a90cb8ec05374b46d9995705ed4954f34}\label{io_8c_a90cb8ec05374b46d9995705ed4954f34}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+grille@{affiche\+\_\+grille}}
+\index{affiche\+\_\+grille@{affiche\+\_\+grille}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+grille()}{affiche\_grille()}}
+{\footnotesize\ttfamily void affiche\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_a3f3ff78e56fcf21a932ff73b70635554}\label{io_8c_a3f3ff78e56fcf21a932ff73b70635554}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+ligne@{affiche\+\_\+ligne}}
+\index{affiche\+\_\+ligne@{affiche\+\_\+ligne}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+ligne()}{affiche\_ligne()}}
+{\footnotesize\ttfamily void affiche\+\_\+ligne (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{int $\ast$}]{ligne }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}une ligne de la grille en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & Entier \+: nombre de colonnes de la grille. \\
+\hline
+{\em ligne} & Tableau d\textquotesingle{}entiers \+: ligne de la grille. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_a92cca3b39e4f5e70fac85ea3d96690a5}\label{io_8c_a92cca3b39e4f5e70fac85ea3d96690a5}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+oscillation@{affiche\+\_\+oscillation}}
+\index{affiche\+\_\+oscillation@{affiche\+\_\+oscillation}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+oscillation()}{affiche\_oscillation()}}
+{\footnotesize\ttfamily void affiche\+\_\+oscillation (\begin{DoxyParamCaption}\item[{int}]{periode }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage de la période d\textquotesingle{}évolution d\textquotesingle{}une grille en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille courante. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_afec97c7f0ca09173b533e29ff31bd286}\label{io_8c_afec97c7f0ca09173b533e29ff31bd286}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+temps@{affiche\+\_\+temps}}
+\index{affiche\+\_\+temps@{affiche\+\_\+temps}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+temps()}{affiche\_temps()}}
+{\footnotesize\ttfamily void affiche\+\_\+temps (\begin{DoxyParamCaption}\item[{int}]{temps }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage du temps d\textquotesingle{}évolution courant en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temps} & Entier \+: temps d\textquotesingle{}évolution courant. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_a634cf584c380ce221d5d4199f3e813bd}\label{io_8c_a634cf584c380ce221d5d4199f3e813bd}} 
+\index{io.\+c@{io.\+c}!affiche\+\_\+trait@{affiche\+\_\+trait}}
+\index{affiche\+\_\+trait@{affiche\+\_\+trait}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+trait()}{affiche\_trait()}}
+{\footnotesize\ttfamily void affiche\+\_\+trait (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}affichage d\textquotesingle{}un trait horizontal en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & Entier \+: nombre de colonnes de la grille. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_a88493b3c55828670e47150a95ed7db5b}\label{io_8c_a88493b3c55828670e47150a95ed7db5b}} 
+\index{io.\+c@{io.\+c}!debut\+\_\+jeu@{debut\+\_\+jeu}}
+\index{debut\+\_\+jeu@{debut\+\_\+jeu}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{debut\+\_\+jeu()}{debut\_jeu()}}
+{\footnotesize\ttfamily void debut\+\_\+jeu (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc }\end{DoxyParamCaption})}
+
+
+
+Fonction pour débuter le jeu en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{io_8c_ab36a6f8957cd3e682119007836ce6ad5}\label{io_8c_ab36a6f8957cd3e682119007836ce6ad5}} 
+\index{io.\+c@{io.\+c}!efface\+\_\+grille@{efface\+\_\+grille}}
+\index{efface\+\_\+grille@{efface\+\_\+grille}!io.\+c@{io.\+c}}
+\subsubsection{\texorpdfstring{efface\+\_\+grille()}{efface\_grille()}}
+{\footnotesize\ttfamily void efface\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}effacement d\textquotesingle{}une grille en mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à effacer. \\
+\hline
+\end{DoxyParams}

@@ -16,7 +16,6 @@
 #define MARGE_G 50
 #define MARGE_B 50
 #define MARGE_D 500
-
 #define INFO_X ((SIZEX - MARGE_D) + (MARGE_G))
 #define INFO_Y (MARGE_H + 40)
 #define INTERLIGNE 35
@@ -32,51 +31,76 @@
 #include "grille.h"
 #include "jeu.h"
 
-
 /**
  * \brief Pointeur de fonction contenant l'adresse de la fonction de calcul du voisinage d'une cellule.
  */
 extern int (*compte_voisins_vivants)(int, int, grille);
 
 /**
- * \brief Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non.
+ * \brief Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non.
  */
 extern int vieillissement;
 
+
+/**
+ * \fn int taille_case_x(grille g)
+ * \brief Fonction renvoyant la taile des cases d'une grille selon x pour s'adapter à l'affichage.
+ *
+ * \param g Grille : grille en jeu.
+ * \return Entier : taille selon x des cases de la grille g.
+ */
 int taille_case_x(grille g);
 
+
+/**
+ * \fn int taille_case_y(grille g);
+ * \brief Fonction renvoyant la taile des cases d'une grille selon y pour s'adapter à l'affichage.
+ *
+ * \param g Grille : grille en jeu.
+ * \return Entier : taille selon y des cases de la grille g.
+ */
 int taille_case_y(grille g);
 
 
 /**
- * \fn void affiche_grille_GUI(grille g)
+ * \fn void affiche_grille_GUI (grille g, cairo_surface_t *cs)
  * \brief Fonction d'affichage d'une grille en mode Graphique.
  *
  * \param g Grille : grille à afficher.
+ * \param cs Adresse de la surface cairo courante.
  */
 void affiche_grille_GUI (grille g, cairo_surface_t *cs);
 
-void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode);
+
+/**
+ * \fn void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode)
+ * \brief Fonction d'affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique.
+ *
+ * \param cs Adresse de la surface cairo courante.
+ * \param temps Entier : temps d'évolution courant.
+ * \param periode Entier : période d'oscillation de la grille en jeu.
+ */
+void affiche_information_GUI(cairo_surface_t *cs, int temps, int periode);
 
 
 /**
- * \fn void affichage_GUI(grille g)
+ * \fn void affichage_GUI (grille *g, grille *gc)
  * \brief Fonction d'affichage d'une partie en mode Graphique.
  *
- * \param g Grille : grille à afficher.
+ * \param g Adresse de la grille en jeu.
+ * \param gc Adresse de la grille servant de copie temporaire pour le programme.
  */
 void affichage_GUI (grille *g, grille *gc);
 
 
-char* nouvelle_grille_GUI(cairo_surface_t *cs, Display *dpy);
-
-
 /**
- * \fn void debut_jeu(grille *g, grille *gc)
+ * \fn void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy)
  * \brief Fonction pour débuter le jeu en mode Graphique.
  *
  * \param gc Adresse de la grille servant de copie temporaire pour le programme.
  * \param g Adresse de la grille en jeu.
+ * \param cs Adresse de la surface cairo courante.
+ * \param dpy Adresse du display courant.
  */
 void debut_jeu_GUI(grille *g, grille *gc, cairo_surface_t *cs, Display *dpy);
 

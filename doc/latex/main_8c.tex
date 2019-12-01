@@ -1,0 +1,60 @@
+\hypertarget{main_8c}{}\section{Référence du fichier src/main.c}
+\label{main_8c}\index{src/main.\+c@{src/main.\+c}}
+
+
+Jeu de la vie.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$cairo.\+h$>$}\newline
+{\ttfamily \#include $<$cairo-\/xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/keysym.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}io\+\_\+gui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grille.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}io.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Entrée du programme -\/ mode Texte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Jeu de la vie. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti
+\end{DoxyAuthor}
+Programme de base du jeu de la vie mettant en scène une série de grilles initiales prédéfinies pouvant être séléctionnées par le joueur. 
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Entrée du programme -\/ mode Texte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em argc} & Chaine de caractères \+: nom du programme. \\
+\hline
+{\em argv} & Chaine de caractères \+: nom de la grille à charger. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+0 si aucune erreur. 
+\end{DoxyReturn}

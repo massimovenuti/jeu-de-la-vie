@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la Vie: Référence du fichier src/io_gui.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la Vie
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier io_gui.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestion des entrées/sorties du jeu de la vie en mode Graphique.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="io__gui_8h_source.html">io_gui.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de io_gui.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="io__gui_8c__incl.png" border="0" usemap="#src_2io__gui_8c" alt=""/></div>
+<map name="src_2io__gui_8c" id="src_2io__gui_8c">
+<area shape="rect" id="node2" href="io__gui_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io_gui.c. " alt="" coords="244,80,311,107"/>
+<area shape="rect" id="node10" href="grille_8h.html" title="Fichier d&#39;en&#45;tête du fichier source grille.c. " alt="" coords="354,229,414,256"/>
+<area shape="rect" id="node12" href="jeu_8h.html" title="Fichier d&#39;en&#45;tête du fichier source jeu.c. " alt="" coords="581,155,632,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a135dfea37a59c98fd2e5a09fb676a7be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a135dfea37a59c98fd2e5a09fb676a7be">taille_case_x</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a135dfea37a59c98fd2e5a09fb676a7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant la taile des cases d'une grille selon x pour s'adapter à l'affichage.  <a href="#a135dfea37a59c98fd2e5a09fb676a7be">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a135dfea37a59c98fd2e5a09fb676a7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317c9950bbdbbec355b3c3955b424524"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a317c9950bbdbbec355b3c3955b424524">taille_case_y</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a317c9950bbdbbec355b3c3955b424524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant la taile des cases d'une grille selon y pour s'adapter à l'affichage.  <a href="#a317c9950bbdbbec355b3c3955b424524">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a317c9950bbdbbec355b3c3955b424524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d2460f736e1e464f0552fb2b42d261"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a16d2460f736e1e464f0552fb2b42d261">affiche_grille_GUI</a> (<a class="el" href="structgrille.html">grille</a> g, cairo_surface_t *cs)</td></tr>
+<tr class="memdesc:a16d2460f736e1e464f0552fb2b42d261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'une grille en mode Graphique.  <a href="#a16d2460f736e1e464f0552fb2b42d261">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a16d2460f736e1e464f0552fb2b42d261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef23b7150cddd403d7e6c054f96641b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a5ef23b7150cddd403d7e6c054f96641b">affiche_informations_GUI</a> (cairo_surface_t *cs, int temps, int periode)</td></tr>
+<tr class="memdesc:a5ef23b7150cddd403d7e6c054f96641b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique.  <a href="#a5ef23b7150cddd403d7e6c054f96641b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5ef23b7150cddd403d7e6c054f96641b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac963a4f0b1e3b0992c1d4efc47466680"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#ac963a4f0b1e3b0992c1d4efc47466680">nouvelle_grille_GUI</a> (cairo_surface_t *cs, Display *dpy)</td></tr>
+<tr class="memdesc:ac963a4f0b1e3b0992c1d4efc47466680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de gestion de nouvelles grilles en mode Graphique.  <a href="#ac963a4f0b1e3b0992c1d4efc47466680">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac963a4f0b1e3b0992c1d4efc47466680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4618a45e955285f24342422772e00408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a4618a45e955285f24342422772e00408">debut_jeu_GUI</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc, cairo_surface_t *cs, Display *dpy)</td></tr>
+<tr class="memdesc:a4618a45e955285f24342422772e00408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour débuter le jeu en mode Graphique.  <a href="#a4618a45e955285f24342422772e00408">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4618a45e955285f24342422772e00408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a857c58c21a4f35a085d947be2c9df3e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a857c58c21a4f35a085d947be2c9df3e6">affichage_GUI</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
+<tr class="memdesc:a857c58c21a4f35a085d947be2c9df3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'une partie en mode Graphique.  <a href="#a857c58c21a4f35a085d947be2c9df3e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a857c58c21a4f35a085d947be2c9df3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gestion des entrées/sorties du jeu de la vie en mode Graphique. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Massimo Venuti</dd></dl>
+<p>Affichage des grilles et des informations du jeu de la vie. Gestion des saisies du joueur. </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a857c58c21a4f35a085d947be2c9df3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a857c58c21a4f35a085d947be2c9df3e6">&#9670;&nbsp;</a></span>affichage_GUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affichage_GUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage d'une partie en mode Graphique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Adresse de la grille en jeu. </td></tr>
+    <tr><td class="paramname">gc</td><td>Adresse de la grille servant de copie temporaire pour le programme. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a16d2460f736e1e464f0552fb2b42d261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d2460f736e1e464f0552fb2b42d261">&#9670;&nbsp;</a></span>affiche_grille_GUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_grille_GUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cairo_surface_t *&#160;</td>
+          <td class="paramname"><em>cs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage d'une grille en mode Graphique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille à afficher. </td></tr>
+    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5ef23b7150cddd403d7e6c054f96641b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef23b7150cddd403d7e6c054f96641b">&#9670;&nbsp;</a></span>affiche_informations_GUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void affiche_informations_GUI </td>
+          <td>(</td>
+          <td class="paramtype">cairo_surface_t *&#160;</td>
+          <td class="paramname"><em>cs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>temps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>periode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
+    <tr><td class="paramname">temps</td><td>Entier : temps d'évolution courant. </td></tr>
+    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille g. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4618a45e955285f24342422772e00408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4618a45e955285f24342422772e00408">&#9670;&nbsp;</a></span>debut_jeu_GUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void debut_jeu_GUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>gc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cairo_surface_t *&#160;</td>
+          <td class="paramname"><em>cs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Display *&#160;</td>
+          <td class="paramname"><em>dpy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction pour débuter le jeu en mode Graphique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>Adresse de la grille servant de copie temporaire pour le programme. </td></tr>
+    <tr><td class="paramname">g</td><td>Adresse de la grille en jeu. </td></tr>
+    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
+    <tr><td class="paramname">dpy</td><td>Adresse du display courant. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac963a4f0b1e3b0992c1d4efc47466680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac963a4f0b1e3b0992c1d4efc47466680">&#9670;&nbsp;</a></span>nouvelle_grille_GUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * nouvelle_grille_GUI </td>
+          <td>(</td>
+          <td class="paramtype">cairo_surface_t *&#160;</td>
+          <td class="paramname"><em>cs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Display *&#160;</td>
+          <td class="paramname"><em>dpy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction de gestion de nouvelles grilles en mode Graphique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dpy</td><td>Adresse du display courant. </td></tr>
+    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Chaîne de caractères : chemin vers une nouvelle grille entré par l'utilisateur. </dd></dl>
+
+</div>
+</div>
+<a id="a135dfea37a59c98fd2e5a09fb676a7be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135dfea37a59c98fd2e5a09fb676a7be">&#9670;&nbsp;</a></span>taille_case_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int taille_case_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant la taile des cases d'une grille selon x pour s'adapter à l'affichage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : taille selon x des cases de la grille g. </dd></dl>
+
+</div>
+</div>
+<a id="a317c9950bbdbbec355b3c3955b424524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317c9950bbdbbec355b3c3955b424524">&#9670;&nbsp;</a></span>taille_case_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int taille_case_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant la taile des cases d'une grille selon y pour s'adapter à l'affichage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : taille selon y des cases de la grille g. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

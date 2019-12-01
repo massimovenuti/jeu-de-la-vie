@@ -1,0 +1,164 @@
+\hypertarget{jeu_8c}{}\section{Référence du fichier src/jeu.c}
+\label{jeu_8c}\index{src/jeu.\+c@{src/jeu.\+c}}
+
+
+Evolutions du jeu de la vie.  
+
+
+{\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de jeu.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{jeu_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{jeu_8c_a919a35926d94b71717909ecc50233f26}{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} -\/ les bords sont cycliques. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_a2e8fdd206d197391527920bbbc137eef}{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique} (int i, int j, \hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} -\/ les bords ne sont pas cycliques. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{jeu_8c_a35492cdc239f17e2ef5fd447c11db14a}\label{jeu_8c_a35492cdc239f17e2ef5fd447c11db14a}} 
+void \hyperlink{jeu_8c_a35492cdc239f17e2ef5fd447c11db14a}{toggle\+\_\+compte\+\_\+voisins\+\_\+vivants} ()
+\begin{DoxyCompactList}\small\item\em Fonction activant/désactivant le mode cyclique. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{jeu_8c_af5dc5f87c713e0c76ead7327db4518f0}\label{jeu_8c_af5dc5f87c713e0c76ead7327db4518f0}} 
+void \hyperlink{jeu_8c_af5dc5f87c713e0c76ead7327db4518f0}{toggle\+\_\+vieillissement} ()
+\begin{DoxyCompactList}\small\item\em Fonction activant/désactivant le vieillissement. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_a97d70fd6528087d6d64f63510f62b65d}{periode\+\_\+oscillation\+\_\+courante} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant la période d\textquotesingle{}oscillation d\textquotesingle{}une grille dans son état courant. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_aba0c5411f74b76f13ccb2eac63175753}{periode\+\_\+oscillation\+\_\+delai} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction renvoyant la période d\textquotesingle{}oscillation d\textquotesingle{}une grille en considérant un éventuel délai. \end{DoxyCompactList}\item 
+void \hyperlink{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}{evolue} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
+\begin{DoxyCompactList}\small\item\em Fonction faisant évoluer une grille d\textquotesingle{}un pas de temps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{jeu_8c_af587b56ea61a80b468caff5a89715cd7}\label{jeu_8c_af587b56ea61a80b468caff5a89715cd7}} 
+int($\ast$ \hyperlink{jeu_8c_af587b56ea61a80b468caff5a89715cd7}{compte\+\_\+voisins\+\_\+vivants} )(int, int, \hyperlink{structgrille}{grille}) = \&\hyperlink{jeu_8h_a919a35926d94b71717909ecc50233f26}{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}
+\begin{DoxyCompactList}\small\item\em Pointeur de fonction contenant l\textquotesingle{}adresse de la fonction de calcul du voisinage d\textquotesingle{}une cellule. \end{DoxyCompactList}\item 
+int \hyperlink{jeu_8c_a852233e3ec97f7c44944c67998337e26}{vieillissement} = V\+I\+E\+I\+L\+L\+I\+S\+S\+E\+M\+E\+N\+T\+\_\+\+I\+N\+IT
+\begin{DoxyCompactList}\small\item\em Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Evolutions du jeu de la vie. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti 
+\end{DoxyAuthor}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{jeu_8c_a919a35926d94b71717909ecc50233f26}\label{jeu_8c_a919a35926d94b71717909ecc50233f26}} 
+\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique()}{compte\_voisins\_vivants\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} -\/ les bords sont cycliques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & Entier \+: i-\/ème ligne de la grille. \\
+\hline
+{\em j} & Entier \+: j-\/ème colonne de la grille. \\
+\hline
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: nombre de voisins vivants de la cellule. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8c_a2e8fdd206d197391527920bbbc137eef}\label{jeu_8c_a2e8fdd206d197391527920bbbc137eef}} 
+\index{jeu.\+c@{jeu.\+c}!compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}}
+\index{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique@{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique()}{compte\_voisins\_vivants\_non\_cyclique()}}
+{\footnotesize\ttfamily int compte\+\_\+voisins\+\_\+vivants\+\_\+non\+\_\+cyclique (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant le nombre de voisins vivants d\textquotesingle{}une cellule \mbox{[}i,j\mbox{]} -\/ les bords ne sont pas cycliques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & Entier \+: i-\/ème ligne de la grille. \\
+\hline
+{\em j} & Entier \+: j-\/ème colonne de la grille. \\
+\hline
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: nombre de voisins vivants de la cellule. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}\label{jeu_8c_ada8f751a97ad1847db23c5ba17be7802}} 
+\index{jeu.\+c@{jeu.\+c}!evolue@{evolue}}
+\index{evolue@{evolue}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{evolue()}{evolue()}}
+{\footnotesize\ttfamily void evolue (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{gc }\end{DoxyParamCaption})}
+
+
+
+Fonction faisant évoluer une grille d\textquotesingle{}un pas de temps. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gc} & Adresse de la grille servant de copie temporaire pour le programme. \\
+\hline
+{\em g} & Adresse de la grille en jeu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jeu_8c_a97d70fd6528087d6d64f63510f62b65d}\label{jeu_8c_a97d70fd6528087d6d64f63510f62b65d}} 
+\index{jeu.\+c@{jeu.\+c}!periode\+\_\+oscillation\+\_\+courante@{periode\+\_\+oscillation\+\_\+courante}}
+\index{periode\+\_\+oscillation\+\_\+courante@{periode\+\_\+oscillation\+\_\+courante}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{periode\+\_\+oscillation\+\_\+courante()}{periode\_oscillation\_courante()}}
+{\footnotesize\ttfamily int periode\+\_\+oscillation\+\_\+courante (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant la période d\textquotesingle{}oscillation d\textquotesingle{}une grille dans son état courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: période d\textquotesingle{}oscillation, 0 si elle n\textquotesingle{}existe pas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jeu_8c_aba0c5411f74b76f13ccb2eac63175753}\label{jeu_8c_aba0c5411f74b76f13ccb2eac63175753}} 
+\index{jeu.\+c@{jeu.\+c}!periode\+\_\+oscillation\+\_\+delai@{periode\+\_\+oscillation\+\_\+delai}}
+\index{periode\+\_\+oscillation\+\_\+delai@{periode\+\_\+oscillation\+\_\+delai}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{periode\+\_\+oscillation\+\_\+delai()}{periode\_oscillation\_delai()}}
+{\footnotesize\ttfamily int periode\+\_\+oscillation\+\_\+delai (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction renvoyant la période d\textquotesingle{}oscillation d\textquotesingle{}une grille en considérant un éventuel délai. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille en jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: période d\textquotesingle{}oscillation, 0 si elle n\textquotesingle{}existe pas. 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des variables}
+\mbox{\Hypertarget{jeu_8c_a852233e3ec97f7c44944c67998337e26}\label{jeu_8c_a852233e3ec97f7c44944c67998337e26}} 
+\index{jeu.\+c@{jeu.\+c}!vieillissement@{vieillissement}}
+\index{vieillissement@{vieillissement}!jeu.\+c@{jeu.\+c}}
+\subsubsection{\texorpdfstring{vieillissement}{vieillissement}}
+{\footnotesize\ttfamily int vieillissement = V\+I\+E\+I\+L\+L\+I\+S\+S\+E\+M\+E\+N\+T\+\_\+\+I\+N\+IT}
+
+
+
+Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non. 
+
+Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. 

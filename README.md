@@ -1,36 +1,60 @@
-# Jeu de la Vie
+# Jeu de la Vie - projet S3
 
-## Techniques de développement : projet S3
+## Lancement du jeu
 
-### Lancement du jeu
+### Générer l'executable
 
-#### Avant d'executer le programme
+* Mode Graphique : `make`
+* Mode Texte : `make MODE=TEXTE`
 
-##### Obligatoire
+La commande `make clean` doit être exécutée avant de recompiler dans un autre mode (Texte - Graphique).
 
-* Générer l'executable : `make`
-
-##### Facultatif
+### Facultatif
 
 * Générer la documentation : `make doxygen`
 * Générer l'archive avec le code source, le Doxyfile et le makefile : `make dist`
 
-#### Execution du programme
+### Execution du programme
 
-Le jeu se lance dans un terminal en entrant la commande : `main <nom_grille>` (windows) | `./main <nom_grille>` (linux).
-L'extension et le chemin d'accès de la grille ne doivent pas être saisis.
+Le jeu se lance dans un terminal en entrant la commande : `./main <chemin_grille>`.
 
-*Exemple (sous linux):*
+*Exemple :*
 
-    ./main grille1
+    ./main grilles/grille1.txt
 
-### Informations importantes
+### Comment jouer ?
 
-Le terminal devra être mis en plein écran pour éviter tout problème d'affichage.
-La saisie d'une nouvelle grille se fait de la même manière qu'au lancement du programme ; sans chemin d'accès ni extension de fichier.
-Les grilles se trouvent dans le dossier `/grilles`.
+#### Mode Texte
 
-### Versions
+* Evoluer : `\n`
+* Activer/désactiver le vieillissement : `v`
+* Activer/désactiver le voisinage cyclique : `c`
+* Calculer la période d'oscillation : `o`
+* Charger une nouvelle grille : `n`
+* Quitter : `q`
+
+La période d'oscillation est initialisée à 0 et reste affichée ainsi si elle n'existe pas.
+
+#### Mode Graphique
+
+Les commandes sont les mêmes excepté pour :
+
+* Evoluer : `clic-gauche`
+* Quitter : `clic-droit`
+
+La période d'oscillation n'est pas affichée de base et ne s'affichera uniquement si elle existe.
+
+Il est possible de saisir le chemin vers une nouvelle grille directement dans la fenêtre graphique.
+
+## Informations importantes
+
+En mode Texte, le terminal devra être mis en plein écran pour éviter tout problème d'affichage.
+
+La saisie d'une nouvelle grille se fait de la même manière qu'au lancement du programme : il faut renseigner le chemin vers une nouvelle grille.
+
+Les grilles de base se trouvent dans le dossier *grilles/*.
+
+## Versions
 
 Version **X**.**Y**.**Z** :
 
@@ -39,4 +63,4 @@ Version **X**.**Y**.**Z** :
 * **Z** : corrections de bugs, modifications mineures.
 
 La dernière version disponible pour un niveau du Jeu de la Vie correspond à sa version la plus stable.
-De nombreuses corrections de bug ont été faites entre le niveau 1 et le niveau 2 : **la dernière version disponible du projet correspond donc à sa forme la plus aboutie**.
+**La dernière version disponible du projet correspond à sa forme la plus aboutie**.

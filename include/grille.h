@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-
 /**
  * \struct grille
  * Une grille est définie par un nombre de lignes, un nombre de colonnes et un tableau de tableaux de cellules.
@@ -52,57 +51,87 @@ void init_grille_from_file (char * filename, grille* g);
 
 /**
  * \fn static inline void set_vivante(int i, int j, grille g)
- * \brief Fonction rendant vivante la cellule [i,j] d'une grille.
+ * \brief Fonction rendant vivante la cellule [i][j] d'une grille.
  *
  * \param i Entier : i-ème ligne de la grille.
- * \param j Entier : j-ème ligne de la grille
+ * \param j Entier : j-ème colonne de la grille
  * \param g Grille : grille en jeu.
  */
 static inline void set_vivante(int i, int j, grille g){g.cellules[i][j] = 1;}
 
+
 /**
  * \fn static inline void set_morte(int i, int j, grille g)
- * \brief Fonction rendant morte la cellule [i,j] d'une grille.
+ * \brief Fonction rendant morte la cellule [i][j] d'une grille.
  *
  * \param i Entier : i-ème ligne de la grille.
- * \param j Entier : j-ème ligne de la grille
+ * \param j Entier : j-ème colonne de la grille
  * \param g Grille : grille en jeu.
  */
 static inline void set_morte(int i, int j, grille g){g.cellules[i][j] = 0;}
 
+
 /**
  * \fn static inline void set_nonViable(int i, int j, grille g)
- * \brief Fonction rendant non viable la cellule [i,j] d'une grille.
+ * \brief Fonction rendant non viable la cellule [i][j] d'une grille.
  *
  * \param i Entier : i-ème ligne de la grille.
- * \param j Entier : j-ème ligne de la grille
+ * \param j Entier : j-ème colonne de la grille
  * \param g Grille : grille en jeu.
  */
 static inline void set_nonViable(int i, int j, grille g){g.cellules[i][j] = -1;}
 
+
 /**
  * \fn static inline int est_vivante(int i, int j, grille g)
- * \brief Fonction testant si la cellule [i,j] d'une grille est vivante.
+ * \brief Fonction vérifiant si la cellule [i][j] d'une grille est vivante.
  *
  * \param i Entier : i-ème ligne de la grille.
- * \param j Entier : j-ème ligne de la grille
+ * \param j Entier : j-ème colonne de la grille
  * \param g Grille : grille en jeu.
+ * \return Entier : 1 ou 0 selon si la cellule est vivante ou non.
  */
 static inline int est_vivante(int i, int j, grille g) {return g.cellules[i][j] > 0;}
 
 
+/**
+ * \fn static inline int est_viable(int i, int j, grille g)
+ * \brief Fonction vérifiant si la cellule [i][j] d'une grille est viable.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème colonne de la grille
+ * \param g Grille : grille en jeu.
+ * \return Entier : 1 ou 0 selon si la cellule est viable ou non.
+ */
 static inline int est_viable(int i, int j, grille g) {return g.cellules[i][j] != -1;}
 
 
+/**
+ * \fn static inline int age_cellule(int i, int j, grille g)
+ * \brief Fonction renvoyant l'âge de la cellule [i][j] d'une grille.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème colonne de la grille
+ * \param g Grille : grille en jeu.
+ * \return Entier : age de la cellule.
+ */
 static inline int age_cellule(int i, int j, grille g) {return g.cellules[i][j];}
 
 
+/**
+ * \fn static inline void vieillit(int i, int j, grille g) 
+ * \brief Fonction faisant vieillir la cellule [i][j] d'une grille d'une année.
+ *
+ * \param i Entier : i-ème ligne de la grille.
+ * \param j Entier : j-ème colonne de la grille
+ * \param g Grille : grille en jeu.
+ */
 static inline void vieillit(int i, int j, grille g) {g.cellules[i][j]++;}
 
 
 /**
  * \fn void copie_grille (grille gs, grille gd)
- * \brief Fonction de copie d'une grille (sans allocation).
+ * \brief Fonction de copie d'une grille - sans allocation.
  *
  * \param gs Grille : grille à copier (source).
  * \param gd Grille : grille à modifier (destination).
@@ -110,9 +139,24 @@ static inline void vieillit(int i, int j, grille g) {g.cellules[i][j]++;}
 void copie_grille (grille gs, grille gd);
 
 
+/**
+ * \fn int sont_identiques(grille g1, grille g2)
+ * \brief Fonction comparant 2 grilles - les âges des cellules ne sont pas considérés.
+ *
+ * \param g1 Grille : première grille à comparer.
+ * \param g2 Grille : deuxième grille à comparer.
+ * \return Entier : 1 ou 0 selon si les grilles sont identiques ou non.
+ */
 int sont_identiques(grille g1, grille g2);
 
 
+/**
+ * \fn int grille_vide(grille g)
+ * \brief Fonction vérifiant si une grille est vide.
+ *
+ * \param g Grille : grille à vérifier.
+ * \return Entier : 1 ou 0 selon si la grille est vide ou non.
+ */
 int grille_vide(grille g);
 
 #endif

@@ -1,0 +1,147 @@
+\hypertarget{grille_8c}{}\section{Référence du fichier src/grille.c}
+\label{grille_8c}\index{src/grille.\+c@{src/grille.\+c}}
+
+
+Gestion des grilles du jeu de la vie.  
+
+
+{\ttfamily \#include \char`\"{}grille.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de grille.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{grille_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{grille_8c_ae621f51c60aa4fafaa0c9f6c9b5a4036}{alloue\+\_\+grille} (int l, int c, \hyperlink{structgrille}{grille} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}allocation d\textquotesingle{}une grille de taille l$\ast$c, initialise toutes les cellules à mortes. \end{DoxyCompactList}\item 
+void \hyperlink{grille_8c_a7074b2b15576e9d2b3cd15c3a1dc7012}{libere\+\_\+grille} (\hyperlink{structgrille}{grille} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Fonction de libération d\textquotesingle{}une grille. \end{DoxyCompactList}\item 
+void \hyperlink{grille_8c_adf5501cc0bbad28f5ffc561d92197e4e}{init\+\_\+grille\+\_\+from\+\_\+file} (char $\ast$filename, \hyperlink{structgrille}{grille} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}allocation et d\textquotesingle{}initalisation d\textquotesingle{}une grille à partir d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+void \hyperlink{grille_8c_a63b3ae16c86b568f6aa8f9ce84128b1e}{copie\+\_\+grille} (\hyperlink{structgrille}{grille} gs, \hyperlink{structgrille}{grille} gd)
+\begin{DoxyCompactList}\small\item\em Fonction de copie d\textquotesingle{}une grille -\/ sans allocation. \end{DoxyCompactList}\item 
+int \hyperlink{grille_8c_a043efcb92192aae5f06fcde249370d3c}{sont\+\_\+identiques} (\hyperlink{structgrille}{grille} g1, \hyperlink{structgrille}{grille} g2)
+\begin{DoxyCompactList}\small\item\em Fonction comparant 2 grilles -\/ les âges des cellules ne sont pas considérés. \end{DoxyCompactList}\item 
+int \hyperlink{grille_8c_a2d61b8d9bac6516500c0157ad4d57c85}{grille\+\_\+vide} (\hyperlink{structgrille}{grille} g)
+\begin{DoxyCompactList}\small\item\em Fonction vérifiant si une grille est vide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion des grilles du jeu de la vie. 
+
+\begin{DoxyAuthor}{Auteur}
+Massimo Venuti
+\end{DoxyAuthor}
+Création / destruction et accès aux fichiers externes des grilles du jeu de la vie. 
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{grille_8c_ae621f51c60aa4fafaa0c9f6c9b5a4036}\label{grille_8c_ae621f51c60aa4fafaa0c9f6c9b5a4036}} 
+\index{grille.\+c@{grille.\+c}!alloue\+\_\+grille@{alloue\+\_\+grille}}
+\index{alloue\+\_\+grille@{alloue\+\_\+grille}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{alloue\+\_\+grille()}{alloue\_grille()}}
+{\footnotesize\ttfamily void alloue\+\_\+grille (\begin{DoxyParamCaption}\item[{int}]{l,  }\item[{int}]{c,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}allocation d\textquotesingle{}une grille de taille l$\ast$c, initialise toutes les cellules à mortes. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & Entier \+: nombre de lignes. \\
+\hline
+{\em c} & Entier \+: nombre de colonnes. \\
+\hline
+{\em g} & Adresse de la grille à allouer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{grille_8c_a63b3ae16c86b568f6aa8f9ce84128b1e}\label{grille_8c_a63b3ae16c86b568f6aa8f9ce84128b1e}} 
+\index{grille.\+c@{grille.\+c}!copie\+\_\+grille@{copie\+\_\+grille}}
+\index{copie\+\_\+grille@{copie\+\_\+grille}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{copie\+\_\+grille()}{copie\_grille()}}
+{\footnotesize\ttfamily void copie\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{gs,  }\item[{\hyperlink{structgrille}{grille}}]{gd }\end{DoxyParamCaption})}
+
+
+
+Fonction de copie d\textquotesingle{}une grille -\/ sans allocation. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em gs} & Grille \+: grille à copier (source). \\
+\hline
+{\em gd} & Grille \+: grille à modifier (destination). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{grille_8c_a2d61b8d9bac6516500c0157ad4d57c85}\label{grille_8c_a2d61b8d9bac6516500c0157ad4d57c85}} 
+\index{grille.\+c@{grille.\+c}!grille\+\_\+vide@{grille\+\_\+vide}}
+\index{grille\+\_\+vide@{grille\+\_\+vide}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{grille\+\_\+vide()}{grille\_vide()}}
+{\footnotesize\ttfamily int grille\+\_\+vide (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction vérifiant si une grille est vide. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Grille \+: grille à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: 1 ou 0 selon si la grille est vide ou non. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{grille_8c_adf5501cc0bbad28f5ffc561d92197e4e}\label{grille_8c_adf5501cc0bbad28f5ffc561d92197e4e}} 
+\index{grille.\+c@{grille.\+c}!init\+\_\+grille\+\_\+from\+\_\+file@{init\+\_\+grille\+\_\+from\+\_\+file}}
+\index{init\+\_\+grille\+\_\+from\+\_\+file@{init\+\_\+grille\+\_\+from\+\_\+file}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+grille\+\_\+from\+\_\+file()}{init\_grille\_from\_file()}}
+{\footnotesize\ttfamily void init\+\_\+grille\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{\hyperlink{structgrille}{grille} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction d\textquotesingle{}allocation et d\textquotesingle{}initalisation d\textquotesingle{}une grille à partir d\textquotesingle{}un fichier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em filename} & Chaine de caractères \+: nom du fichier dans lequel se trouve la configuration initiale de la grille. \\
+\hline
+{\em g} & Adresse de la grille à initialiser. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{grille_8c_a7074b2b15576e9d2b3cd15c3a1dc7012}\label{grille_8c_a7074b2b15576e9d2b3cd15c3a1dc7012}} 
+\index{grille.\+c@{grille.\+c}!libere\+\_\+grille@{libere\+\_\+grille}}
+\index{libere\+\_\+grille@{libere\+\_\+grille}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{libere\+\_\+grille()}{libere\_grille()}}
+{\footnotesize\ttfamily void libere\+\_\+grille (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction de libération d\textquotesingle{}une grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & Adresse de la grille à libérer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{grille_8c_a043efcb92192aae5f06fcde249370d3c}\label{grille_8c_a043efcb92192aae5f06fcde249370d3c}} 
+\index{grille.\+c@{grille.\+c}!sont\+\_\+identiques@{sont\+\_\+identiques}}
+\index{sont\+\_\+identiques@{sont\+\_\+identiques}!grille.\+c@{grille.\+c}}
+\subsubsection{\texorpdfstring{sont\+\_\+identiques()}{sont\_identiques()}}
+{\footnotesize\ttfamily int sont\+\_\+identiques (\begin{DoxyParamCaption}\item[{\hyperlink{structgrille}{grille}}]{g1,  }\item[{\hyperlink{structgrille}{grille}}]{g2 }\end{DoxyParamCaption})}
+
+
+
+Fonction comparant 2 grilles -\/ les âges des cellules ne sont pas considérés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g1} & Grille \+: première grille à comparer. \\
+\hline
+{\em g2} & Grille \+: deuxième grille à comparer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier \+: 1 ou 0 selon si les grilles sont identiques ou non. 
+\end{DoxyReturn}

@@ -28,11 +28,11 @@ endif
 
 #-------------------------------------------------------------------------#
 
-main : main.o jeu.o io.o io_gui.o grille.o libjeu.a | $(BPATH) 
+main : main.o io.o io_gui.o libjeu.a | $(BPATH) 
 	$(CC) $(CFLAGS) -o $@ $(OBJETS) $(LDFLAGS)
 	mv $@ $(BPATH)
 
-main.o : main.c jeu.h io.h grille.h
+main.o : main.c jeu.h io.h grille.h io_gui.h
 jeu.o : jeu.c jeu.h
 io.o : io.c io.h
 io_gui.o : io_gui.c io_gui.h
@@ -43,9 +43,9 @@ grille.o : grille.c grille.h
 	mv $@ $(OPATH)
 
 libjeu.a : grille.o jeu.o | $(LPATH)
-	ar -crv $@ obj/grille.o obj/jeu.o
+	ar -crv $@ $(OPATH)grille.o $(OPATH)jeu.o
 	ranlib $@
-	mv $@ lib/$@
+	mv $@ $(LPATH)
 
 
 #-------------------------------------------------------------------------#
@@ -71,7 +71,7 @@ doxygen : | $(DPATH)
 
 
 clean :
-	rm $(OPATH)* $(BPATH)*
+	rm $(OPATH)* $(BPATH)* 
 
 dist :
 	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v2.2.2.tar.xz 

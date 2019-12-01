@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la Vie: Référence du fichier include/jeu.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la Vie
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier jeu.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Evolutions du jeu de la vie. ">jeu.c</a>.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="grille_8h_source.html">grille.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de jeu.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="jeu_8h__incl.png" border="0" usemap="#include_2jeu_8h" alt=""/></div>
+<map name="include_2jeu_8h" id="include_2jeu_8h">
+<area shape="rect" id="node2" href="grille_8h.html" title="Fichier d&#39;en&#45;tête du fichier source grille.c. " alt="" coords="94,80,154,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="jeu_8h__dep__incl.png" border="0" usemap="#include_2jeu_8hdep" alt=""/></div>
+<map name="include_2jeu_8hdep" id="include_2jeu_8hdep">
+<area shape="rect" id="node2" href="jeu_8c.html" title="Evolutions du jeu de la vie. " alt="" coords="5,80,77,107"/>
+<area shape="rect" id="node3" href="main_8c.html" title="Jeu de la vie. " alt="" coords="185,155,268,181"/>
+<area shape="rect" id="node4" href="io_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io.c. " alt="" coords="101,80,189,107"/>
+<area shape="rect" id="node6" href="io__gui_8h.html" title="Fichier d&#39;en&#45;tête du fichier source io_gui.c. " alt="" coords="264,80,376,107"/>
+<area shape="rect" id="node5" href="io_8c.html" title="Gestion des entrées/sorties du jeu de la vie en mode Texte. " alt="" coords="95,155,161,181"/>
+<area shape="rect" id="node7" href="io__gui_8c.html" title="Gestion des entrées/sorties du jeu de la vie en mode Graphique. " alt="" coords="293,155,382,181"/>
+</map>
+</div>
+</div>
+<p><a href="jeu_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a711cc76b16996b0312dfa1f24f183f3c"><td class="memItemLeft" align="right" valign="top"><a id="a711cc76b16996b0312dfa1f24f183f3c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VIEILLISSEMENT_INIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a711cc76b16996b0312dfa1f24f183f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cdb10a572da681b1f293759439f437e"><td class="memItemLeft" align="right" valign="top"><a id="a6cdb10a572da681b1f293759439f437e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TEMPS_INIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a6cdb10a572da681b1f293759439f437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625e382d1726d52b7fd65f723f0532ca"><td class="memItemLeft" align="right" valign="top"><a id="a625e382d1726d52b7fd65f723f0532ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PERIODE_MAX</b>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a625e382d1726d52b7fd65f723f0532ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a8cc2b5e88ad337fae1efad3f36d33f01">modulo</a> (int i, int m)</td></tr>
+<tr class="memdesc:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction modulo modifiée.  <a href="#a8cc2b5e88ad337fae1efad3f36d33f01">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8cc2b5e88ad337fae1efad3f36d33f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919a35926d94b71717909ecc50233f26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a919a35926d94b71717909ecc50233f26">compte_voisins_vivants_cyclique</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a919a35926d94b71717909ecc50233f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant le nombre de voisins vivants d'une cellule [i,j] - les bords sont cycliques.  <a href="#a919a35926d94b71717909ecc50233f26">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a919a35926d94b71717909ecc50233f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8fdd206d197391527920bbbc137eef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a2e8fdd206d197391527920bbbc137eef">compte_voisins_vivants_non_cyclique</a> (int i, int j, <a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a2e8fdd206d197391527920bbbc137eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant le nombre de voisins vivants d'une cellule [i,j] - les bords ne sont pas cycliques.  <a href="#a2e8fdd206d197391527920bbbc137eef">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2e8fdd206d197391527920bbbc137eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35492cdc239f17e2ef5fd447c11db14a"><td class="memItemLeft" align="right" valign="top"><a id="a35492cdc239f17e2ef5fd447c11db14a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a35492cdc239f17e2ef5fd447c11db14a">toggle_compte_voisins_vivants</a> ()</td></tr>
+<tr class="memdesc:a35492cdc239f17e2ef5fd447c11db14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction activant/désactivant le mode cyclique. <br /></td></tr>
+<tr class="separator:a35492cdc239f17e2ef5fd447c11db14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dc5f87c713e0c76ead7327db4518f0"><td class="memItemLeft" align="right" valign="top"><a id="af5dc5f87c713e0c76ead7327db4518f0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#af5dc5f87c713e0c76ead7327db4518f0">toggle_vieillissement</a> ()</td></tr>
+<tr class="memdesc:af5dc5f87c713e0c76ead7327db4518f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction activant/désactivant le vieillissement. <br /></td></tr>
+<tr class="separator:af5dc5f87c713e0c76ead7327db4518f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d70fd6528087d6d64f63510f62b65d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#a97d70fd6528087d6d64f63510f62b65d">periode_oscillation_courante</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:a97d70fd6528087d6d64f63510f62b65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant la période d'oscillation d'une grille dans son état courant.  <a href="#a97d70fd6528087d6d64f63510f62b65d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a97d70fd6528087d6d64f63510f62b65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0c5411f74b76f13ccb2eac63175753"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#aba0c5411f74b76f13ccb2eac63175753">periode_oscillation_delai</a> (<a class="el" href="structgrille.html">grille</a> g)</td></tr>
+<tr class="memdesc:aba0c5411f74b76f13ccb2eac63175753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction renvoyant la période d'oscillation d'une grille en considérant un éventuel délai.  <a href="#aba0c5411f74b76f13ccb2eac63175753">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aba0c5411f74b76f13ccb2eac63175753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8f751a97ad1847db23c5ba17be7802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#ada8f751a97ad1847db23c5ba17be7802">evolue</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
+<tr class="memdesc:ada8f751a97ad1847db23c5ba17be7802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant évoluer une grille d'un pas de temps.  <a href="#ada8f751a97ad1847db23c5ba17be7802">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ada8f751a97ad1847db23c5ba17be7802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Fichier d'en-tête du fichier source <a class="el" href="jeu_8c.html" title="Evolutions du jeu de la vie. ">jeu.c</a>. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Massimo Venuti </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a919a35926d94b71717909ecc50233f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919a35926d94b71717909ecc50233f26">&#9670;&nbsp;</a></span>compte_voisins_vivants_cyclique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compte_voisins_vivants_cyclique </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant le nombre de voisins vivants d'une cellule [i,j] - les bords sont cycliques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Entier : i-ème ligne de la grille. </td></tr>
+    <tr><td class="paramname">j</td><td>Entier : j-ème colonne de la grille. </td></tr>
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : nombre de voisins vivants de la cellule. </dd></dl>
+
+</div>
+</div>
+<a id="a2e8fdd206d197391527920bbbc137eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8fdd206d197391527920bbbc137eef">&#9670;&nbsp;</a></span>compte_voisins_vivants_non_cyclique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compte_voisins_vivants_non_cyclique </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant le nombre de voisins vivants d'une cellule [i,j] - les bords ne sont pas cycliques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Entier : i-ème ligne de la grille. </td></tr>
+    <tr><td class="paramname">j</td><td>Entier : j-ème colonne de la grille. </td></tr>
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : nombre de voisins vivants de la cellule. </dd></dl>
+
+</div>
+</div>
+<a id="ada8f751a97ad1847db23c5ba17be7802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8f751a97ad1847db23c5ba17be7802">&#9670;&nbsp;</a></span>evolue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evolue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a> *&#160;</td>
+          <td class="paramname"><em>gc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant évoluer une grille d'un pas de temps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td>Adresse de la grille servant de copie temporaire pour le programme. </td></tr>
+    <tr><td class="paramname">g</td><td>Adresse de la grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8cc2b5e88ad337fae1efad3f36d33f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc2b5e88ad337fae1efad3f36d33f01">&#9670;&nbsp;</a></span>modulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static inline int modulo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction modulo modifiée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Entier : premier opérande. </td></tr>
+    <tr><td class="paramname">m</td><td>Entier : second opérande. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : résultat du modulo modifié (i+m)m. </dd></dl>
+
+</div>
+</div>
+<a id="a97d70fd6528087d6d64f63510f62b65d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d70fd6528087d6d64f63510f62b65d">&#9670;&nbsp;</a></span>periode_oscillation_courante()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int periode_oscillation_courante </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant la période d'oscillation d'une grille dans son état courant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : période d'oscillation, 0 si elle n'existe pas. </dd></dl>
+
+</div>
+</div>
+<a id="aba0c5411f74b76f13ccb2eac63175753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0c5411f74b76f13ccb2eac63175753">&#9670;&nbsp;</a></span>periode_oscillation_delai()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int periode_oscillation_delai </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrille.html">grille</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction renvoyant la période d'oscillation d'une grille en considérant un éventuel délai. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Grille : grille en jeu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Entier : période d'oscillation, 0 si elle n'existe pas. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
