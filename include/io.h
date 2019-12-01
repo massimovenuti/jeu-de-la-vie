@@ -16,14 +16,8 @@
 #define TAILLE_MAX 200
 #define PERIODE_INIT -1
 
-/**
- * \brief Pointeur de fonction contenant l'adresse de la fonction de calcul du voisinage d'une cellule.
- */
 extern int (*compte_voisins_vivants)(int, int, grille);
 
-/**
- * \brief Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non.
- */
 extern int vieillissement;
 
 

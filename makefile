@@ -1,5 +1,5 @@
 CC = gcc -g
-CFLAGS = -W -Wall
+CFLAGS = -w
 CPPFLAGS = -Iinclude -I/usr/include/cairo
 LDFLAGS =  -Llib -lcairo -lm -lX11 -ljeu
 
@@ -74,4 +74,4 @@ clean :
 	rm $(OPATH)* $(BPATH)* 
 
 dist :
-	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v2.2.2.tar.xz 
+	tar -c --xz Doxyfile makefile include/ src/ -f VenutiMassimo-GoL-v5.0.2.tar.xz 

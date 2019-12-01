@@ -31,14 +31,8 @@
 #include "grille.h"
 #include "jeu.h"
 
-/**
- * \brief Pointeur de fonction contenant l'adresse de la fonction de calcul du voisinage d'une cellule.
- */
 extern int (*compte_voisins_vivants)(int, int, grille);
 
-/**
- * \brief Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non.
- */
 extern int vieillissement;
 
 
@@ -80,7 +74,7 @@ void affiche_grille_GUI (grille g, cairo_surface_t *cs);
  * \param temps Entier : temps d'évolution courant.
  * \param periode Entier : période d'oscillation de la grille en jeu.
  */
-void affiche_information_GUI(cairo_surface_t *cs, int temps, int periode);
+void affiche_informations_GUI(cairo_surface_t *cs, int temps, int periode);
 
 
 /**

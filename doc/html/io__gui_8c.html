@@ -76,9 +76,6 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a5ef23b7150cddd403d7e6c054f96641b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a5ef23b7150cddd403d7e6c054f96641b">affiche_informations_GUI</a> (cairo_surface_t *cs, int temps, int periode)</td></tr>
 <tr class="memdesc:a5ef23b7150cddd403d7e6c054f96641b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique.  <a href="#a5ef23b7150cddd403d7e6c054f96641b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5ef23b7150cddd403d7e6c054f96641b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac963a4f0b1e3b0992c1d4efc47466680"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#ac963a4f0b1e3b0992c1d4efc47466680">nouvelle_grille_GUI</a> (cairo_surface_t *cs, Display *dpy)</td></tr>
-<tr class="memdesc:ac963a4f0b1e3b0992c1d4efc47466680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de gestion de nouvelles grilles en mode Graphique.  <a href="#ac963a4f0b1e3b0992c1d4efc47466680">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac963a4f0b1e3b0992c1d4efc47466680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4618a45e955285f24342422772e00408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8c.html#a4618a45e955285f24342422772e00408">debut_jeu_GUI</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc, cairo_surface_t *cs, Display *dpy)</td></tr>
 <tr class="memdesc:a4618a45e955285f24342422772e00408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour débuter le jeu en mode Graphique.  <a href="#a4618a45e955285f24342422772e00408">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4618a45e955285f24342422772e00408"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,7 +199,7 @@ Fonctions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
     <tr><td class="paramname">temps</td><td>Entier : temps d'évolution courant. </td></tr>
-    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille g. </td></tr>
+    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille en jeu. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,44 +254,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ac963a4f0b1e3b0992c1d4efc47466680"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac963a4f0b1e3b0992c1d4efc47466680">&#9670;&nbsp;</a></span>nouvelle_grille_GUI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * nouvelle_grille_GUI </td>
-          <td>(</td>
-          <td class="paramtype">cairo_surface_t *&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Display *&#160;</td>
-          <td class="paramname"><em>dpy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction de gestion de nouvelles grilles en mode Graphique. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dpy</td><td>Adresse du display courant. </td></tr>
-    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Chaîne de caractères : chemin vers une nouvelle grille entré par l'utilisateur. </dd></dl>
 
 </div>
 </div>

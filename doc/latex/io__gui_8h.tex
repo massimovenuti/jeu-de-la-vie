@@ -14,14 +14,16 @@ Fichier d\textquotesingle{}en-\/tête du fichier source \hyperlink{io__gui_8c}{i
 {\ttfamily \#include $<$X11/keysym.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}grille.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}jeu.\+h\char`\"{}}\newline
-Graphe des dépendances par inclusion de io\+\_\+gui.\+h\+:\nopagebreak
+Graphe des dépendances par inclusion de io\+\_\+gui.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{io__gui_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -74,8 +76,6 @@ void \hyperlink{io__gui_8h_a5ef23b7150cddd403d7e6c054f96641b}{affiche\+\_\+infor
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique. \end{DoxyCompactList}\item 
 void \hyperlink{io__gui_8h_a857c58c21a4f35a085d947be2c9df3e6}{affichage\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une partie en mode Graphique. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}{nouvelle\+\_\+grille\+\_\+\+G\+UI} (cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
-\begin{DoxyCompactList}\small\item\em Fonction de gestion de nouvelles grilles en mode Graphique. \end{DoxyCompactList}\item 
 void \hyperlink{io__gui_8h_a4618a45e955285f24342422772e00408}{debut\+\_\+jeu\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc, cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
 \begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu en mode Graphique. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
@@ -84,8 +84,9 @@ void \hyperlink{io__gui_8h_a4618a45e955285f24342422772e00408}{debut\+\_\+jeu\+\_
 \mbox{\Hypertarget{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}\label{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}} 
 int($\ast$ \hyperlink{io__gui_8h_af587b56ea61a80b468caff5a89715cd7}{compte\+\_\+voisins\+\_\+vivants} )(int, int, \hyperlink{structgrille}{grille})
 \begin{DoxyCompactList}\small\item\em Pointeur de fonction contenant l\textquotesingle{}adresse de la fonction de calcul du voisinage d\textquotesingle{}une cellule. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{io__gui_8h_a852233e3ec97f7c44944c67998337e26}\label{io__gui_8h_a852233e3ec97f7c44944c67998337e26}} 
 int \hyperlink{io__gui_8h_a852233e3ec97f7c44944c67998337e26}{vieillissement}
-\begin{DoxyCompactList}\small\item\em Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -147,7 +148,7 @@ Fonction d\textquotesingle{}affichage des informations (temps, oscillation, viei
 \hline
 {\em temps} & Entier \+: temps d\textquotesingle{}évolution courant. \\
 \hline
-{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille g. \\
+{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille en jeu. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{io__gui_8h_a4618a45e955285f24342422772e00408}\label{io__gui_8h_a4618a45e955285f24342422772e00408}} 
@@ -171,26 +172,6 @@ Fonction pour débuter le jeu en mode Graphique.
 {\em dpy} & Adresse du display courant. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}\label{io__gui_8h_a0a2e12ae92c73da942413cc1c3306589}} 
-\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}}
-\index{nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
-\subsubsection{\texorpdfstring{nouvelle\+\_\+grille\+\_\+\+G\+U\+I()}{nouvelle\_grille\_GUI()}}
-{\footnotesize\ttfamily char$\ast$ nouvelle\+\_\+grille\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs,  }\item[{Display $\ast$}]{dpy }\end{DoxyParamCaption})}
-
-
-
-Fonction de gestion de nouvelles grilles en mode Graphique. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em dpy} & Adresse du display courant. \\
-\hline
-{\em cs} & Adresse de la surface cairo courante. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Chaîne de caractères \+: chemin vers une nouvelle grille entré par l\textquotesingle{}utilisateur. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{io__gui_8h_a135dfea37a59c98fd2e5a09fb676a7be}\label{io__gui_8h_a135dfea37a59c98fd2e5a09fb676a7be}} 
 \index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}}
 \index{taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
@@ -227,17 +208,3 @@ Fonction renvoyant la taile des cases d\textquotesingle{}une grille selon y pour
 \begin{DoxyReturn}{Renvoie}
 Entier \+: taille selon y des cases de la grille g. 
 \end{DoxyReturn}
-
-
-\subsection{Documentation des variables}
-\mbox{\Hypertarget{io__gui_8h_a852233e3ec97f7c44944c67998337e26}\label{io__gui_8h_a852233e3ec97f7c44944c67998337e26}} 
-\index{io\+\_\+gui.\+h@{io\+\_\+gui.\+h}!vieillissement@{vieillissement}}
-\index{vieillissement@{vieillissement}!io\+\_\+gui.\+h@{io\+\_\+gui.\+h}}
-\subsubsection{\texorpdfstring{vieillissement}{vieillissement}}
-{\footnotesize\ttfamily int vieillissement}
-
-
-
-Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. 
-
-Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. 

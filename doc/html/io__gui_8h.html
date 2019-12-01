@@ -132,9 +132,6 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a857c58c21a4f35a085d947be2c9df3e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#a857c58c21a4f35a085d947be2c9df3e6">affichage_GUI</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc)</td></tr>
 <tr class="memdesc:a857c58c21a4f35a085d947be2c9df3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage d'une partie en mode Graphique.  <a href="#a857c58c21a4f35a085d947be2c9df3e6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a857c58c21a4f35a085d947be2c9df3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a2e12ae92c73da942413cc1c3306589"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#a0a2e12ae92c73da942413cc1c3306589">nouvelle_grille_GUI</a> (cairo_surface_t *cs, Display *dpy)</td></tr>
-<tr class="memdesc:a0a2e12ae92c73da942413cc1c3306589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de gestion de nouvelles grilles en mode Graphique.  <a href="#a0a2e12ae92c73da942413cc1c3306589">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0a2e12ae92c73da942413cc1c3306589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4618a45e955285f24342422772e00408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#a4618a45e955285f24342422772e00408">debut_jeu_GUI</a> (<a class="el" href="structgrille.html">grille</a> *g, <a class="el" href="structgrille.html">grille</a> *gc, cairo_surface_t *cs, Display *dpy)</td></tr>
 <tr class="memdesc:a4618a45e955285f24342422772e00408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction pour débuter le jeu en mode Graphique.  <a href="#a4618a45e955285f24342422772e00408">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4618a45e955285f24342422772e00408"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,8 +142,9 @@ Variables</h2></td></tr>
 int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#af587b56ea61a80b468caff5a89715cd7">compte_voisins_vivants</a> )(int, int, <a class="el" href="structgrille.html">grille</a>)</td></tr>
 <tr class="memdesc:af587b56ea61a80b468caff5a89715cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur de fonction contenant l'adresse de la fonction de calcul du voisinage d'une cellule. <br /></td></tr>
 <tr class="separator:af587b56ea61a80b468caff5a89715cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a852233e3ec97f7c44944c67998337e26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#a852233e3ec97f7c44944c67998337e26">vieillissement</a></td></tr>
-<tr class="memdesc:a852233e3ec97f7c44944c67998337e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non.  <a href="#a852233e3ec97f7c44944c67998337e26">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a852233e3ec97f7c44944c67998337e26"><td class="memItemLeft" align="right" valign="top"><a id="a852233e3ec97f7c44944c67998337e26"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io__gui_8h.html#a852233e3ec97f7c44944c67998337e26">vieillissement</a></td></tr>
+<tr class="memdesc:a852233e3ec97f7c44944c67998337e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non. <br /></td></tr>
 <tr class="separator:a852233e3ec97f7c44944c67998337e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -264,7 +262,7 @@ int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_
   <table class="params">
     <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
     <tr><td class="paramname">temps</td><td>Entier : temps d'évolution courant. </td></tr>
-    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille g. </td></tr>
+    <tr><td class="paramname">periode</td><td>Entier : période d'oscillation de la grille en jeu. </td></tr>
   </table>
   </dd>
 </dl>
@@ -322,44 +320,6 @@ int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_
 
 </div>
 </div>
-<a id="a0a2e12ae92c73da942413cc1c3306589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a2e12ae92c73da942413cc1c3306589">&#9670;&nbsp;</a></span>nouvelle_grille_GUI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* nouvelle_grille_GUI </td>
-          <td>(</td>
-          <td class="paramtype">cairo_surface_t *&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Display *&#160;</td>
-          <td class="paramname"><em>dpy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction de gestion de nouvelles grilles en mode Graphique. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dpy</td><td>Adresse du display courant. </td></tr>
-    <tr><td class="paramname">cs</td><td>Adresse de la surface cairo courante. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Chaîne de caractères : chemin vers une nouvelle grille entré par l'utilisateur. </dd></dl>
-
-</div>
-</div>
 <a id="a135dfea37a59c98fd2e5a09fb676a7be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a135dfea37a59c98fd2e5a09fb676a7be">&#9670;&nbsp;</a></span>taille_case_x()</h2>
 
@@ -411,24 +371,6 @@ int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="io_
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Entier : taille selon y des cases de la grille g. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Documentation des variables</h2>
-<a id="a852233e3ec97f7c44944c67998337e26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a852233e3ec97f7c44944c67998337e26">&#9670;&nbsp;</a></span>vieillissement</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int vieillissement</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. </p>
-<p>Valeur égale à 1 ou 0 selon si le vieillissement des cellules est activé ou non. </p>
 
 </div>
 </div>

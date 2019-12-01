@@ -6,7 +6,8 @@ Gestion des entrées/sorties du jeu de la vie en mode Graphique.
 
 
 {\ttfamily \#include \char`\"{}io\+\_\+gui.\+h\char`\"{}}\newline
-Graphe des dépendances par inclusion de io\+\_\+gui.\+c\+:\nopagebreak
+Graphe des dépendances par inclusion de io\+\_\+gui.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,8 +25,6 @@ void \hyperlink{io__gui_8c_a16d2460f736e1e464f0552fb2b42d261}{affiche\+\_\+grill
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage d\textquotesingle{}une grille en mode Graphique. \end{DoxyCompactList}\item 
 void \hyperlink{io__gui_8c_a5ef23b7150cddd403d7e6c054f96641b}{affiche\+\_\+informations\+\_\+\+G\+UI} (cairo\+\_\+surface\+\_\+t $\ast$cs, int temps, int periode)
 \begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage des informations (temps, oscillation, vieillissement, cyclique) en mode Graphique. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{io__gui_8c_ac963a4f0b1e3b0992c1d4efc47466680}{nouvelle\+\_\+grille\+\_\+\+G\+UI} (cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
-\begin{DoxyCompactList}\small\item\em Fonction de gestion de nouvelles grilles en mode Graphique. \end{DoxyCompactList}\item 
 void \hyperlink{io__gui_8c_a4618a45e955285f24342422772e00408}{debut\+\_\+jeu\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc, cairo\+\_\+surface\+\_\+t $\ast$cs, Display $\ast$dpy)
 \begin{DoxyCompactList}\small\item\em Fonction pour débuter le jeu en mode Graphique. \end{DoxyCompactList}\item 
 void \hyperlink{io__gui_8c_a857c58c21a4f35a085d947be2c9df3e6}{affichage\+\_\+\+G\+UI} (\hyperlink{structgrille}{grille} $\ast$g, \hyperlink{structgrille}{grille} $\ast$gc)
@@ -91,7 +90,7 @@ Fonction d\textquotesingle{}affichage des informations (temps, oscillation, viei
 \hline
 {\em temps} & Entier \+: temps d\textquotesingle{}évolution courant. \\
 \hline
-{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille g. \\
+{\em periode} & Entier \+: période d\textquotesingle{}oscillation de la grille en jeu. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{io__gui_8c_a4618a45e955285f24342422772e00408}\label{io__gui_8c_a4618a45e955285f24342422772e00408}} 
@@ -115,26 +114,6 @@ Fonction pour débuter le jeu en mode Graphique.
 {\em dpy} & Adresse du display courant. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{io__gui_8c_ac963a4f0b1e3b0992c1d4efc47466680}\label{io__gui_8c_ac963a4f0b1e3b0992c1d4efc47466680}} 
-\index{io\+\_\+gui.\+c@{io\+\_\+gui.\+c}!nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}}
-\index{nouvelle\+\_\+grille\+\_\+\+G\+UI@{nouvelle\+\_\+grille\+\_\+\+G\+UI}!io\+\_\+gui.\+c@{io\+\_\+gui.\+c}}
-\subsubsection{\texorpdfstring{nouvelle\+\_\+grille\+\_\+\+G\+U\+I()}{nouvelle\_grille\_GUI()}}
-{\footnotesize\ttfamily char $\ast$ nouvelle\+\_\+grille\+\_\+\+G\+UI (\begin{DoxyParamCaption}\item[{cairo\+\_\+surface\+\_\+t $\ast$}]{cs,  }\item[{Display $\ast$}]{dpy }\end{DoxyParamCaption})}
-
-
-
-Fonction de gestion de nouvelles grilles en mode Graphique. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em dpy} & Adresse du display courant. \\
-\hline
-{\em cs} & Adresse de la surface cairo courante. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Chaîne de caractères \+: chemin vers une nouvelle grille entré par l\textquotesingle{}utilisateur. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{io__gui_8c_a135dfea37a59c98fd2e5a09fb676a7be}\label{io__gui_8c_a135dfea37a59c98fd2e5a09fb676a7be}} 
 \index{io\+\_\+gui.\+c@{io\+\_\+gui.\+c}!taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}}
 \index{taille\+\_\+case\+\_\+x@{taille\+\_\+case\+\_\+x}!io\+\_\+gui.\+c@{io\+\_\+gui.\+c}}

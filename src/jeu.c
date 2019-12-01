@@ -7,7 +7,14 @@
  */
 #include "jeu.h"
 
+/**
+ * \brief Pointeur de fonction contenant l'adresse de la fonction de calcul du voisinage d'une cellule.
+ */
 int (*compte_voisins_vivants)(int, int, grille) = &compte_voisins_vivants_cyclique;
+
+/**
+ * \brief Valeur contenant 1 ou 0 selon si le vieillissement des cellules est activé ou non.
+ */
 int vieillissement = VIEILLISSEMENT_INIT;
 
 
